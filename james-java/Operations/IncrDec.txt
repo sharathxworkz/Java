@@ -1,0 +1,12 @@
+class Ternary{
+
+	public static void main(String args[]){
+		
+		int age = 19;
+		String result = age>= 21?; "You are eligible to ride the Bike" :
+					"You are under age to ride the Bike" 
+			
+		System.out.println("Ternary of age is: " + result);
+	}
+	
+}
