@@ -1,12 +1,17 @@
-class ForLoop{
-
+class Value{
+         void Sum(int x,y){
+	 int sum = 0;
+	 sum=x+y;
+	 return sum;	
+          }
+	 void Diff(int x,y){
+	 int difference = 0;
+	 difference= x-y;
+	 return difference;
+	  } 
 	public static void main(String args[]){
-
-		for(int i=10; i>=1; i--){
-
-			System.out.println(i*i);
-		}
-		
-		
-	}
+		Value value = new ReturnValue();
+		System.out.println("Sum of numbers are:" + value.Sum(10,17));
+		System.out.println(Difference of numbers are:" + value.diff(10,17)); 
+     }
 }
