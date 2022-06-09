@@ -1,4 +1,4 @@
-package com.xworkz.corejava.Polymorphizm.MethodOverride;
+package com.xworkz.corejava.Polymorphizm.MethodOverride.Rbi;
 
 public class SC extends BankRbi {
 
