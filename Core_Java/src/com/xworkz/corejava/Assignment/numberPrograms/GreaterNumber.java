@@ -8,6 +8,7 @@ public class GreaterNumber {
 	{  
 		int a, b, c, largest;   
 		Scanner scn = new Scanner(System.in);  
+		
 		System.out.println("Enter the first number:");  
 		a = scn.nextInt();  
 		System.out.println("Enter the second number:");  
