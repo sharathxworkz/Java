@@ -4,7 +4,7 @@ public class HiDemo {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Engineering E = new Engineering();
+		//Engineering E = new Engineering();
 		CsE cs = new CsE();
 		CvE cv = new CvE();
 		MeE me = new MeE();

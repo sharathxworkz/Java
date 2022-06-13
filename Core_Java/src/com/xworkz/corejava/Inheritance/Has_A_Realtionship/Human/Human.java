@@ -1,4 +1,5 @@
 package com.xworkz.corejava.Inheritance.Has_A_Realtionship.Human;
+//example for composition 
 
 public class Human {
 
