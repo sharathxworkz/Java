@@ -1,4 +1,4 @@
-package com.xworkz.corejava.Abstraction.Mobile;
+package com.xworkz.corejava.Abstraction.Abstraction_Class.Mobile;
 
 public class MobileTest {
 

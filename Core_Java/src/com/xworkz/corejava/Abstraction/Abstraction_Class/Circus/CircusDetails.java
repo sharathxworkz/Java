@@ -1,4 +1,4 @@
-package com.xworkz.corejava.Abstraction.Circus;
+package com.xworkz.corejava.Abstraction.Abstraction_Class.Circus;
 
 public class CircusDetails {
 
