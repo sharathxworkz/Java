@@ -1,0 +1,399 @@
+06/18/2022 - Java Test
+
+1-> Java is not pure object oriented language because it supports Primitive DataTypes.
+	(eg:- int, float,double,char & boolean)
+
+ 	* But java can be made pure object oriented by using some methods.
+
+
+2-> Pointers are used to hold or point to the address of the location of the variable,
+		
+	* which can be easily accessed by outside(hackers), and they can modify the data, and without even alerting system.
+	* So for the security issues we won't use the pointers in Java.
+
+
+4-> The Infinite loop can be declared using For, While and do While loop, by providing no end condition inside the Loop.
+		int i =1;
+		eg:-for(i = 1 i >= 1; i++)
+		System.out.println("*") * is printed n number of times.
+	    
+		int i =1;
+                while(i>1)
+			System.out.println("*") * is printed n number of times.
+
+  
+5 -> Yes a main menthod can be overloaded but once jvm finds main menthod which has (main(String [] args)), jvm does not execute further.
+	
+	eg:- public static void main(String [] args){  // This will be executed
+			System.out.println("*");	
+		}
+	     public static void main(String [] args){ // This will not be executed
+			System.out.println("*");	
+		}  
+
+6-> Main method is static because:
+	
+	1.Jvm will not be in the same folder where we develope a software. if it not public it won't be visible to jvm to call.
+	2.It is static because when it is static jvm can call main method by class name. And staic objects are created at loading time(start of the program).
+
+8-> We recicve a executebale file. 
+
+
+9-> Memory Allocations:
+		1.Class (Method area)
+		2.Heap Memory
+		3.Stack Memory 
+		4.Array
+		5.Pc register
+
+10-> Local Variable:
+		1.Which are defined inside the block/method/constructor.
+		2.It can't be accessed by any outside of the class.
+		3.Without initialization we can not use Local Variable.
+		3.other members of the class have no knowledge of local variable existance.
+		4.where visiblity is zero.
+		5.created at the start of the method and destroyed at the end of the method execution.
+
+     Instance Variable:
+
+		1.Which are defined outside of the block/method/constructor but inside of the class.
+		2.Instance variable can be accessed outside of the class throught object and class.
+		3.Initialization is not mandatory but it has to be declares, Initialization will be done by compiler.
+		4.visibility is public.
+		5.created at the time of object creation and destroyed when object.
+
+11-> If the main is not static we can't asscess the object or function by using class name.
+
+12-> JDk - combination of JRE and JVM.
+
+	JDK contains:
+		1.Javac-Java complier.
+		2.Java - JVM.
+		3.Jdb = Java Debuger.
+		4.JavaDocc-:Document generator for java program in standard Html format.
+		5.JavaP - Java Disassembler.
+		6.Javah - Java Header
+		
+	variants:
+		1.JSE(Java Standard  Edition)
+		2.JME(Java Micro Edition)
+		3.JEE(Java Enterprize Edition)
+		4.Java FX
+
+13-> JDK-(Java Development Kit)
+	
+	1.JDK-> (JRE + Development Tools)
+		1.JDK consits of JRE and developement Tools like(javac(Compiler),java(JVM),JavaDocc(java-document generator.),jdb(Java deboger),JavaP(java dis-assembler),Javah(Java-Header))
+		(JavaDocc-:Document generator for java progam in standard Html format.)
+		2.JDK is used to develope software and test the software functionality.
+
+	2.JRE-(Java Run-time Environment)
+	
+		(Java RTE)/JRE-> (JRE + JVM) 
+				 1.JRE provides run-time environment of the software.
+				 2.JRE does not contain Development tools, to develope or to debug.
+				 3.JRE provied only the libraries requird to execute or run the software.  
+			
+	3.JVM-(Java Virtual machine)
+
+			1.which exeute the code.
+			2.Which converts .class file to machine code.
+			3.JVM is platform independent, So we can run the java code irrespective of the operating system(windows,Linux,Mac).
+
+14-> No we can't use super and this keyword at a time.
+	reasons:
+		1.This and super keyword is has to be the first to be defined in the start of the program.
+		2.we can't decalre both this and super at same type, which throws am error.  
+		
+15-> Daimond problem is caused when we try to achive Hybrid Inheritance.
+
+	1.Hybrid Inheritance is a combination of one are more Inheritance.
+	
+			*class A
+
+		 *classB 	   *classC
+
+			  *classD
+
+	2.when class B and class C entends class A.
+	3.when class D extends class B and class C this created and ambiquity this is known as daimond problem.
+	4.when we call a menthod from parent class that is present in both parennt class, JVM will be confused
+		which class should the  JVM call for the function.
+	5.For this reason Java does not support Hybrid Inheritance.	
+
+16-> Polymorphism:- The ability of the Method to behave differently(under different circumstances) when a different object acting upon it.
+
+		Types:
+			1.Compile Time Polymorphism
+			2.Run Time Polymorphism
+			
+			Polymorphism can be achived in 2 ways:
+				1.method Overloading
+				2.method Overriding
+	
+		1.Method Overloading: Method which has same name but differnt parameters.
+				      It is an example of Compile Time Polymorphism.
+			
+		example:	class Overload{
+			
+					 int add(int a){
+						
+						int a,b;
+						int b=10;
+						int sum = a+b;
+						S.O.P("Sum is :"sum);
+					 }
+
+					 int add(int a,int b){	
+						
+						int a,b;
+						int sum = a+b;
+						S.O.P("Sum is :"sum);
+					 }
+					
+					 void add(){
+						
+						int a,b;
+						int sum = a+b;
+						S.O.P("Sum is :"sum);
+					 }
+
+				}
+		1.Method Overring: when a child class contain same method or function as of the parent class.(with same name and same parameters)
+				  Method Signature must be same.
+		
+		example: class RbiBank{
+			
+					 void interest (){
+						S.O.P("Standard rate of Interest is 7%")
+					 }
+				   }
+
+					class ScBank{
+			
+					 void interest (){
+						S.O.P("Standard rate of Interest is 9%")
+					 }
+				   }
+
+					class IciciBank{
+			
+					 void interest (){
+						S.O.P("Standard rate of Interest is 9%")
+					 }
+				   }
+
+17-> Abstraction:- Abstraction is showing/Displaying the functionality to the user and hiding the implementation from the user.
+
+		Types:
+			1. Abstract Class 
+			2.Interface
+
+			1.Abstract class:-The function is not implemented and the child class will provide the implementation,Abstract class can contain concrete methods.
+
+			Eg:
+				Abstract class Game{
+					
+					void play();
+				}
+				class gamer extends Game{
+					
+					void play(){
+				
+					S.O.P("Play in the Demon Mode To equip more weapon");
+				
+				}
+
+			2.Interface:which is pure Abstract, which contains only abstract method does not conatin any concrete method.
+					
+					public interface Fight{
+					
+					void round();
+					void prize();
+				}
+				class implements Fight{
+				
+					void round(){
+					S.O.P("There are 3 rounds in the R2F Fight")
+					}
+					void prize(){
+					S.O.P("Winner Gets 10000000rs..!!!");
+					}
+				
+				}
+
+18-> Encapsulation: Hiding od Data from the User.
+
+
+19->		Abstract class:
+			1.Extends Key word is used to implement the method of the class by child.
+			2.can contain concrete methods.
+			3.Does not suppoert Multiple and Hybrid Inheritance.
+			4.class has to be defined as abstract
+
+		Interface:
+			1.Implement Key word is used implement the method of the class by child.
+			2.It is pure abstract and can't contain concrete methods.
+			3.suppoert Multiple and Hybrid Inheritance.
+
+
+20->		Method Overloading:- class having many methods with same name but diferent parameters.
+
+			types of overloading:
+					1.changing return type.(void ,int)
+					2.changing parameters.
+
+					example:
+					class Overload{
+			
+					 int add(int a){
+						
+						int a,b;
+						int b=10;
+						int sum = a+b;
+						S.O.P("Sum is :"sum);
+					 }
+
+					 changing parameters.
+
+					 int add(int a,int b){	
+						
+						int a,b;
+						int sum = a+b;
+						S.O.P("Sum is :"sum);
+					 }
+					
+					 changing return type.(void ,int)
+
+					 void add(){
+						
+						int a,b;
+						int sum = a+b;
+						S.O.P("Sum is :"sum);
+					 }
+
+21-> Method Overring: sub class having same method has the super class and is allowed to make changes
+		
+		example: class RbiBank{
+			
+					 void interest (){
+						S.O.P("Standard rate of Interest is 7%")
+					 }
+				   }
+
+					class ScBank{
+			
+					 void interest (){
+						S.O.P("Standard rate of Interest is 9%")
+					 }
+				   }
+
+					class IciciBank{
+			
+					 void interest (){
+						S.O.P("Standard rate of Interest is 9%")
+					 }
+				   }
+
+22-> No we can't override static method in java.
+		1.static method are created at the time of class loading
+		2.After loading we can't make changes in the method.
+
+23-> Rules for method overriding in java:
+
+		1.It has to be a IS-A-Relationship.
+		2.It should have same return type or co-varient type.
+		3.Only Inherited method can be overriden.
+
+24-> composition:- It is a technique used by java to implement Has-A-Relationship.Where objects are strongly bonded.
+			eg:Human and Heart
+
+27->Constructor: Special type of method which has same name has class and does not have return type.
+			*used to create object by using new Keyword.
+			
+		 1.yes we can overload the constructor
+			eg: Game(){
+				}
+				
+			Game(String name, int g){
+			}
+
+28->Types:
+		
+	1.Default Constructor.
+		eg:Game();//which does not contain any parameters
+	2.Parameterized Constructor
+		Game(String name, int g)//contains parameters
+
+29->Inheritance: when a child class is able to access the state and behavior of the parent class.
+
+		types:
+			1.Single Inheritance: when single class extends another class
+				eg:class Game{
+					
+					void play();
+				}
+				class gamer extends Game{
+					
+					void play(){
+				
+					S.O.P("Play in the Demon Mode To equip more weapon");
+				
+				}
+
+			2.Multilevel Inheritance: when there is a chain of inheritance.
+
+				eg:class Game{
+					
+					void play();
+				}
+				class Gamer extends Game{
+					
+					void play(){
+				
+					S.O.P("Play in the Demon Mode To equip more weapon");
+				
+				}
+				class play extends Gamer(){}
+			
+		     3.Hierarchical Inheritance:when many sub-class extends a single parent.
+			
+				eg:class Game{
+					
+					void play();
+				}
+				class gamer extends Game{
+					
+					void play(){
+				
+					S.O.P("Play in the Demon Mode To equip more weapon");
+				
+				}
+				class Play extends Game(){}
+				class Fly extends Game(){}
+	
+			4.Multiple Inheritance:when a sub class has 2 or more parents.
+					
+
+				eg:class Game{
+					
+					void play();
+				}
+				class Gamer extends Game{
+					
+					void play(){
+				
+					S.O.P("Play in the Demon Mode To equip more weapon");
+				
+				}
+				class play extends Gamer extends Game(){}
+
+		     5.Hybrid Inheritance: It is a combination of one or more Inheritance.
+
+
+_____________________________________________________________________X_________________________________________________________________________________________
+
+					
+				
+
+
