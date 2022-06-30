@@ -6,10 +6,10 @@ public class CarDeepCopyDemo {
 
 		MusicSystem musicSystem = new MusicSystem("Boat","Bluetooth",50000);
 		Car jagvar = new Car("Jaguar","Auto-Shifting","MatBlack",350000000.00,musicSystem);
-		Car ferrari = jagvar.clone();
+		Car jagvar1 = jagvar.clone();
 		
 		System.out.println("Jaguar"+jagvar);
-		System.out.println("Ferrari"+ferrari);
+		System.out.println("Ferrari"+jagvar1);
 		//Before updated the changes
 		
 		System.out.println("");
@@ -17,12 +17,10 @@ public class CarDeepCopyDemo {
 		System.out.println("MusicSystem:" + musicSystem);
 		System.out.println("");
 		
-		jagvar.musicSystem.brand = "Bose";
-		ferrari.price = 250000000;//changing price of the car
-		musicSystem.brand = "Sony";//dought
+		jagvar1.musicSystem.brand = "Bose";
 		
 		System.out.println("Jaguar"+jagvar);
-		System.out.println("Ferrari"+ferrari);
+		System.out.println("jagvar1"+jagvar1);
 		//After updating changes
 	}
 
