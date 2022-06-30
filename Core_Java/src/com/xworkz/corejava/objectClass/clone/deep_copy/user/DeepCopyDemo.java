@@ -1,4 +1,4 @@
-package com.xworkz.corejava.objectClass.clone.deep_copy;
+package com.xworkz.corejava.objectClass.clone.deep_copy.user;
 
 public class DeepCopyDemo {
 
@@ -8,6 +8,7 @@ public class DeepCopyDemo {
 		User obj1 = new User("sharath",77,addr);
 		
 		User obj2 = (User)obj1.clone();
+		
 		System.out.println("Object 1" + obj1.toString());
 		System.out.println("object 2" + obj2.toString());
 		

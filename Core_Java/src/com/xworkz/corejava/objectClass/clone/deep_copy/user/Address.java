@@ -1,4 +1,4 @@
-package com.xworkz.corejava.objectClass.clone.deep_copy;
+package com.xworkz.corejava.objectClass.clone.deep_copy.user;
 
 public class Address implements Cloneable{
 	String city;

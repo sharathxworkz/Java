@@ -1,4 +1,4 @@
-package com.xworkz.corejava.objectClass.clone.deep_copy;
+package com.xworkz.corejava.objectClass.clone.deep_copy.user;
 
 public class User implements Cloneable {
 
@@ -22,7 +22,7 @@ protected Object clone() throws CloneNotSupportedException
 {
 	User user = null;
 	try {
-		user = (User) super.clone();
+		user = (User) super.clone();//optimization of code
 } catch (CloneNotSupportedException e) {
 	  System.out.println("Clonable not sopported");
 }

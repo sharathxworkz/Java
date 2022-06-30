@@ -1,4 +1,4 @@
-package com.xworkz.corejava.objectClass.clone;
+package com.xworkz.corejava.objectClass.clone.shallow_copy;
 
 import java.util.Objects;
 
