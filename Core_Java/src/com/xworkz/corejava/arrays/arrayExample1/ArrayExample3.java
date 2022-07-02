@@ -8,7 +8,7 @@ public class ArrayExample3 {
 		for(char i=0; i<alphabet.length;i++) {
 		alphabet[i] = arr;
 		arr++;
-		System.out.println(alphabet[i]);		
+		System.out.print(alphabet[i]+" ");		
 			
 			
 		}
