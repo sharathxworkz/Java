@@ -1,0 +1,329 @@
+02/07/2022                                   java Test2
+
+1. classloder in java:
+
+	Loades the library and static files into the JVM before program starts execution. 
+
+2.	
+	while Loop:
+
+	1.The condition is defined at first.
+	2.The statemets are defined below.
+	3.The below statements are executed only if the condition is true.
+
+	Do-while Loop:
+
+	1.Firts steps are defined.
+	2.condition id defined after the statements.
+	3.One time the statements are executed ir-respective of the condition. 
+	4.After the statement is executed once the condition is verified.
+
+3. The Infinite loop can be declared using For, While and do While loop, by providing no end condition for the Loop.
+
+		int j=1;
+		eg:while(j<=1){
+		System.out.println("*") * is printed n number of times.
+		}
+
+	Reason: 
+	The above program is a infinite loop, we are not providing and increment operation for i.
+	(So i will always be 1 so condition is always be true & loop will never exit out of loop)
+
+
+4.Variable: Name of a memory loaction which holds data at the time of application execution.
+	
+	class varb{
+		
+		int a,b;//  Instance variable
+
+		static int d;//Static variable
+
+	public static void main(String [] args){
+		
+		int b,c;  //Local variable
+           }
+
+	}
+
+	 Static Variable:
+		1.Defined with static keyword.
+		2.Initialization is not mandatory complier will assign null values.
+		
+	 Local Variable:
+
+		1.Which are defined inside the block/method/constructor.
+		2.It can't be accessed outside of the class.
+		
+    	 Instance Variable:
+
+		1.Which are defined outside of the block/method/constructor but inside of the class.
+		2.Initialization is not mandatory but it has to be declares, Initialization will be done by compiler.
+		
+5.
+
+6. Difference B/W Static Variable &  Local Variable & Instance Variable
+
+	Static Variable:
+		1.Defined with static keyword.
+		2.Initialization is not mandatory complier will assign null values.
+		3.Only one copy of static variable is shared among the class.
+		4.created at the time of class loading(start of the program)
+		5.Accessed by class name.
+
+	 Local Variable:
+
+		1.Which are defined inside the block/method/constructor.
+		2.It can't be accessed outside of the class.
+		3.Without initialization we can not use Local Variable.
+		3.other members of the class have no knowledge of local variable existance.
+		4.where visiblity is zero.
+		5.created at the start of the method and destroyed at the end of the method execution.
+
+    	 Instance Variable:
+
+		1.Which are defined outside of the block/method/constructor but inside of the class.
+		2.Instance variable can be accessed outside of the class throught object and class.
+		3.Initialization is not mandatory but it has to be declares, Initialization will be done by compiler.
+		4.visibility is public.
+		5.created at the time of object creation and destroyed when object.
+
+7. 
+	Reasons:
+
+ 	We can access Static variable form object because:
+
+	  1.Static variable are created at the time loading and object are crated at the time of execution.  
+	  2.Object are created after the creation of static variables.
+
+8.  Access specifiers:
+
+	1.Private
+	2.protected
+	3.Public
+
+	1.Private:
+
+	2.Protected:
+
+	3.Public:
+
+9. There are 5 ways to create an object:-
+	1.new Keyword
+		eg: new Classname();
+
+	2.new Instance
+	3.clone() Method
+		eg: Classname  obj = obj2.clone(); 
+	
+	4.Serialization method
+	5.Factory method(design)
+
+10.N/A
+
+11. Anonymous Object/De-refered object are/Abondant Object
+		
+	* Object which does not have any reference
+		eg: new Class_name(); // does not have any refrence
+
+12.	a)Class:
+	      1. Is a blueprint of object and have only logical existance.
+	      2. Class contains
+				1.Method/behavior
+				2.Fields/states
+				3.Constructor
+				4.Blocks (IIB & SIB)
+				5.Nested Class & Nested Interface
+
+	b)Method Signature:
+		Method name followed by parameters(arguments). 
+			Eg:  add (int a, int b)
+
+13.N/A
+
+14. a.Constructor:
+		1.Is a special type of method used to initialize and create object;
+		2.Does not have return type.
+		3.can not override Constructor.
+		4.can't use Constructor in another class.
+
+    b.Destructor:N/A		
+
+15. 	a.Constructor:
+		
+		1.Is a special type of method which does not have return type.
+		2.Used to initialize and create object;
+		3.Does not have return type.
+		4.can not override Constructor.
+		5.can't use Constructor in another class.
+		6.works on non-existing object
+
+	b.Methods:
+
+		1.Contains return type(int,void).
+		2.Used to perform some task on some data.
+		3.we can override method.
+		4.We can call method from another class.
+		5.works on only existing object.
+
+16.Types of Constructor:
+		
+	1.Default Constructor.
+		eg:Game();//which does not contain any parameters
+	2.Parameterized Constructor.
+		Game(String name, int g)//contains parameters
+	3.No-Arguments Constructor.
+
+17. Yes Copy constructor is supported In Java.
+
+18. Constructor chaining is a process of calling one constructor inside another constructor.
+	types
+		1.this()// to call constructor in same class
+		2.super()// to call parent constructor in child class. 
+
+19. 
+	Super: keyword is used to access the states and functions of parent/super/base class.
+   	This: keyword is used to access the states and functions of same class.
+
+20. this()
+	To call constructor in same class.
+
+21. No, Constructor can't be private.
+
+22. which can hava only one instance of an object in the class.
+
+23.	
+     Polymorphism:- The ability of the Method to behave differently(under different circumstances) when a different object acting upon it.
+
+		Types:
+			1.Compile Time Polymorphism
+			2.Run Time Polymorphism
+			
+			Polymorphism can be achived in 2 ways:
+				1.method Overloading
+				2.method Overriding
+	
+		1.Method Overloading: Method which has same name but differnt parameters.
+				      It is an example of Compile Time Polymorphism.
+			
+		example:	class Overload{
+			
+					 int add(int a){
+						
+						int a,b;
+						int b=10;
+						int sum = a+b;
+						S.O.P("Sum is :"sum);
+					 }
+
+					 int add(int a,int b){	
+						
+						int a,b;
+						int sum = a+b;
+						S.O.P("Sum is :"sum);
+					 }
+					
+					 void add(){
+						
+						int a,b;
+						int sum = a+b;
+						S.O.P("Sum is :"sum);
+					 }
+
+				}
+		1.Method Overring: when a child class contain same method or function as of the parent class.(with same name and same parameters)
+				  Method Signature must be same.
+		
+		example: class RbiBank{
+			
+					 void interest (){
+						S.O.P("Standard rate of Interest is 7%")
+					 }
+				   }
+
+					class ScBank{
+			
+					 void interest (){
+						S.O.P("Standard rate of Interest is 9%")
+					 }
+				   }
+
+					class IciciBank{
+			
+					 void interest (){
+						S.O.P("Standard rate of Interest is 9%")
+					 }
+				   }
+
+24.
+	Method Overloadong:
+		1.It is a complie-time polymorphism.
+		2.return type can be different.
+
+	Method Overriding:
+		It is a run-time polymorphism.
+		2.It should have same return type or co-varient type.
+
+25.N/A
+
+26.N/A
+
+27. To change the implementation of the parent class method or function in the child class.
+
+	main :- main can be overriden.
+	Static :- can't be overriden.
+	final :- can't be overriden.
+	Constructor :- can't be overriden.
+	abstruct :- can be overriden.
+
+32.
+	
+	Abstract class:-The method will not be implemented and the parent class & child class must provide the implementation.
+
+			Eg:
+				Abstract class Game{ //abstract class
+					
+					void play(); // abstract method 
+				}
+
+33. 
+
+	
+	Interface:which is pure Abstract, which contains only abstract method does not conatin any concrete method.
+	
+	* used to achive 100% abstraction.
+			
+					public interface Fight{
+					
+					void round();
+					void prize();
+
+34.
+
+		Abstract:
+			1.Extends Key word is used to implement the method of the class by child.
+			2.can contain concrete methods.
+			3.Does not suppoert Multiple and Hybrid Inheritance.
+			4.class has to be defined as abstract
+
+		Interface:
+			1.Implement Key word is used implement the method of the class by child.
+			2.It is pure abstract and can't contain concrete methods.
+			3.suppoert Multiple and Hybrid Inheritance.
+
+35. Yes. we can have Nested Interfaces.
+
+		interface Ghost{
+			
+		   inteface candhru implements Ghost{
+	
+			}	
+		}
+
+	
+38.N/A
+
+39. Yes, static local variables allowed in Java.
+
+				
+
+
