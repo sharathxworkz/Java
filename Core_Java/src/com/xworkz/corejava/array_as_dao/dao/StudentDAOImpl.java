@@ -29,8 +29,10 @@ public class StudentDAOImpl implements StudentDAO {
 
 	@Override
 	public void updateStudent(StudentDTO dto) {
-		// TODO Auto-generated method stub
+		for(int i=0; i< index; i++) {
 
 	}
 
+}
+	
 }

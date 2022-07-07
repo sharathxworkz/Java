@@ -31,11 +31,23 @@ public class StudentServiceImpl implements StudentService {
 		return studentDAO.getStudent(phno);
 	}
 
+
 	@Override
 	public void updateStudent(StudentDTO dto) {
-
-		System.out.println("batch is updated");
-
+		long number = dto.getPhno();
+		int count = 0;
+		while (number > 0) {
+			number = number / 10;
+			count++;
+		}
+		if (count == 10) {
+			studentDAO.updateStudent(dto);
+		}
+		else {
+			System.out.println("Invalid credentials");
+		}
 	}
 
-}
+		
+	}
+
