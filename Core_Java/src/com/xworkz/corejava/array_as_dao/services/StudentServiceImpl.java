@@ -59,7 +59,6 @@ public class StudentServiceImpl implements StudentService {
 		}
 		if (count == 10) {
 			studentDAO.deleteStudent(dto);
-			System.out.println(dto);
 		}
 
 		else {

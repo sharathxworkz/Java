@@ -62,7 +62,7 @@ public class StudentDAOImpl implements StudentDAO {
 		}
 		
 		else {
-			System.out.println("Invalid Details");
+			System.out.println("Student not found");
 		}
 		
 	}
