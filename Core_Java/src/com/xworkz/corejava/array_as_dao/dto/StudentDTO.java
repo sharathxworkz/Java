@@ -67,7 +67,6 @@ public class StudentDTO {
 		this.percentage = percentage;
 	}
 
-
 	@Override
 	public String toString() {
 		return "StudentDTO [id=" + id + ", name=" + name + ", batchname=" + batchname + ", phno=" + phno

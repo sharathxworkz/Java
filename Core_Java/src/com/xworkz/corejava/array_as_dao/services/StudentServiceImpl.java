@@ -31,7 +31,6 @@ public class StudentServiceImpl implements StudentService {
 		return studentDAO.getStudent(phno);
 	}
 
-
 	@Override
 	public void updateStudent(StudentDTO dto) {
 		long number = dto.getPhno();
@@ -42,12 +41,30 @@ public class StudentServiceImpl implements StudentService {
 		}
 		if (count == 10) {
 			studentDAO.updateStudent(dto);
+			System.out.println(dto);
 		}
+
 		else {
-			System.out.println("Invalid credentials");
+			System.out.println("Invalid number");
 		}
 	}
 
-		
+	@Override
+	public void deleteStudent(StudentDTO dto) {
+		long number = dto.getPhno();
+		int count = 0;
+		while (number > 0) {
+			number = number / 10;
+			count++;
+		}
+		if (count == 10) {
+			studentDAO.deleteStudent(dto);
+			System.out.println(dto);
+		}
+
+		else {
+			System.out.println("Invalid number");
+		}
 	}
+}
 
