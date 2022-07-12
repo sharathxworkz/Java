@@ -2,7 +2,6 @@ package com.xworkz.corejava.Blocks.Sib;
 
 public class Staticibs {
 
-		
 		String brand;
 		String type;
 		double price;

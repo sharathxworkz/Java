@@ -11,8 +11,6 @@ public class Chocolate extends Sweet {
 		}
 		else {
 			System.out.println("I did't get any sweet.!!!");
-		}
-		
-		
+		}		
 	}
 }

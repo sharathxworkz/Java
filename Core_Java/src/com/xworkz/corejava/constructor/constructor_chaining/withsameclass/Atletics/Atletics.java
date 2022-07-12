@@ -7,13 +7,12 @@ public class Atletics {
 	String type; 
 
 	Atletics (){
-	this("name","Sprint",100);
+	this("Swimming", "Rellay", 400);
 	System.out.println("The Name of game is: Athletics");
 
 	}
 	
 	Atletics( String name, String type){
-
 	this.name = "Athletics";
 	this.type = "Relay";
 	System.out.println("The type of game is:"+this.type);
@@ -21,8 +20,9 @@ public class Atletics {
 
 	Atletics( String name,String type,int distance){
 
-	this.name = "Swimming";
-	this.distance = 100;
+	this.name = name;
+	this.type = type;
+	this.distance = distance;
 	System.out.println("The distance of the game is:"+this.distance+"mm");
 
 	}
