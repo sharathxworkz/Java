@@ -1,0 +1,267 @@
+										Java Test 3 (18/07/2022)
+
+1. Short Name for Variable Arguments.
+	Syntax: public static void main(String ... args)
+
+2. Blocks: Statements written inside braces({}).
+		eg{
+		    sop(a);
+			}
+	Types:
+		1.IIB (Instant Intialization Block)
+		2.SIB (Static Intialization Block)
+
+	IIB:
+
+		class IIB{
+
+			{
+			
+				}
+				
+			}
+
+	SIB:
+		class SIB{
+
+			static{
+				
+			 }			
+	
+			}
+
+3.Hashcode: It is the intiger value that will by assigned by jvm to the object.
+
+	eg: class Code{
+
+		  public static void main(String[] args){
+	
+			Code code = new Code();
+			Sop(code.hashcode);//value of code will be the output
+		}
+	  }
+
+4. String is immutable:
+
+	1.String is immutable because of security, synchronization  and class loading.
+	2.If String not immutable we can't use SCP(string constant pool).
+	3.If String is not immutable it's not safe for MultiThreading.
+  	
+      **SCP(string constant pool).
+
+		1.It is special block of memory in heap memory reserved for String class.
+		2.No Duplicate objects are created in scp.
+		3.Only reference is provided for duplicate variable.
+			eg:String s;
+				*s is created in scp not in heap.
+
+5.N/A
+
+6. Exception is an object.That affects the flow of the program.
+
+    Types:
+	1.Arithmetic Exception 
+	2.Nullpointer Exception
+	3.OutOfBound Exception 
+	4.ClassNotFound Exception 
+	5.ClassCast Exception 
+
+	
+	ClassNotFound Exception: when we try to access a class which is not present in pacakge. 
+
+	ClassCast Exception: When we try to improperly to cast a class from 	one type to another type. 
+
+7. Advantage of Exception:
+	1.By ecxeption we can avoid the ubnormal termination of program.
+	2.And we can provide alternate way to complete the program execution if Exception occurs. 
+
+8.Yes we can have a try block with catch block.
+
+9.Throw keyword is used to throw the exception. 
+
+10. No, We can't write any code after throw statement(throw is same has return).
+	 
+11.Finally Block:- Block which will be exceuted even if an exception occured and not handeled.
+	eg:
+	   class Ecep{
+		
+		String s = "Good";
+		s = null;
+		try{
+		Sop(s.length); 
+		}
+		catch{
+		}
+		final{
+		Sop("hello"); o/p: hello (even if Exception occurs the final block is executed)
+		}
+	} 			            			
+		
+12. Error: which terminates our program execution abnormally.
+
+13. IS-A Relationship:
+	1.Used when all properties and behavior is required.
+	2.used in Inheritance.
+
+    HAS-A elationship:
+	1.Used when some properties and behavior are required.
+	
+
+14. main method is public because:
+	*Jvm will not be in the same folder where we write the code,if main method is not public jvm will not be able to find the main method and won't be able to execute the program.
+
+    main method is Static because:
+		*Jvm calls the main method by class name. static methods are loaded at the time of class loading.So it can be accesed.
+
+    main method is void because:
+	*when JVM executes the main method after the execution of main method,jvm wont be able to process any statements, so main main is void so it wont return any result.
+	
+15.
+   Yes a main menthod can be overloaded but once jvm finds main menthod which has (main(String [] args)), jvm does not execute further.
+	
+	eg:- public static void main(String [] args){  // This will be executed
+			System.out.println("*");	
+		}
+	     public static void main(String [] args){ // This will not be executed
+			System.out.println("*");	
+		}  
+
+16. Yes,we can have nested methods in java;
+	eg: void add(){
+		sub(); 
+	}
+
+17. Yes we can write methods in main() method.
+
+18.  
+	a)Object:Which has states and Behavior. 
+
+	b)Anonymous Object/De-refered object are/Abondant Object
+		
+	* Object which does not have any reference
+		eg: new Class_name(); // does not have any refrence
+
+	c)Class:
+	      1. Is a blueprint of object and have only logical existance.
+	      2. Class contains
+				1.Method/behavior
+				2.Fields/states
+				3.Constructor
+				4.Blocks (IIB & SIB)
+				5.Nested Class & Nested Interface
+
+		eg:- class Flower{
+					String name;
+					
+					void bloom(){
+		
+					}			
+				}
+
+19.JIT (Just in Time Compiler):-
+
+	JIT is provided after java version 1.2.
+		*which is also known as hotspot JVM.
+
+		which converts the some statements which are executed continuosly again and again.
+			(JVM has a count variable if statements executes more then 3 the it will be converted to machine code)
+
+20. 
+    Types:
+	1.Arithmetic Exception 
+	2.Nullpointer Exception
+	3.OutOfBound Exception 
+	4.ClassNotFound Exception 
+	5.ClassCast Exception 
+	6.Interrepted Exception 
+	7.FileNotFound Exception 
+	8.Illegal Argument Exception 
+	9.Illegal State Exception
+	10.Io Exception
+
+21. Yes we can create our own exceptions.
+	eg: 
+		class Excep extends RuntimeException{
+			public static void main(String[] args){
+			     String s = "Good";
+			     s = null;
+			    youArePointingToNullValue(){
+				  Sop("No value is there");
+				}
+			     try{
+				Sop(s.length); 
+				}
+				catch(Exception e){
+				  Sop(e.youArePointingToNullValue());
+				}
+			}
+		}
+
+22.
+	Try: try block is used to enclose the code that might throw an exception.
+	Catch: Catch block is used to catch any exception that is thrown by the program.
+	Throw: Throw keyword is used to throw the exception. 
+	Throws: Throws keyword notify the caller(JVM) that this may throw an exception.
+
+23.No it not a keyword, it is Datatype and also a class; 
+
+24.In 2 ways we can create String Object1;
+	
+	1.String s = "Hello"; // this object is created in scp not in heap.
+
+	2.By new Keyword:
+		String d = new String();
+		// this will create an object both in heap and scp.
+25.	
+
+      1.method with parameter and  return type
+
+	class Sum{
+		
+	    public static void main(String [] args){
+	    static int add(int a, int b){
+		   int sum = a+b;
+			return sum;
+		}
+	    }	
+	}
+	
+	2.method without parameter and with return type
+
+		class Sum{
+		
+	    public static void main(String [] args){
+	    static int add(){
+		  int a,b;
+		   int sum = a+b;
+			return sum;
+		}
+	    }	
+	}
+
+	3.method with parameter and without return type
+
+			class Sum{
+		
+	    public static void main(String [] args){
+	    static void add(int a, int b){
+		   int sum = a+b;
+		   sop(sum);
+		}
+	    }	
+	}
+
+	4.method without parameter and return type
+
+		 	class Sum{
+		
+	    public static void main(String [] args){
+	    static int add(){
+		  int a,b;
+		   int sum = a+b;
+			return sum;
+		}
+	    }	
+	}
+
+__________________________________________________________________________________________X______________________________________________________________________
