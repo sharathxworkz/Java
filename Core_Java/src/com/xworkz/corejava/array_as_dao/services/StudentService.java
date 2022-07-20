@@ -9,5 +9,4 @@ public interface StudentService {
 	void updateStudent(StudentDTO dto);
 	void deleteStudent(StudentDTO dto);
 	
-	//void updateStudent(long phno, String batchhName);
 }

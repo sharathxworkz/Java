@@ -7,5 +7,5 @@ public interface StudentDAO {
 	StudentDTO getStudent(long phno);
 	void updateStudent(StudentDTO dto);
 	void deleteStudent(StudentDTO dto);
-	//void updateStudent(long phno, String batchhName);
+	
 }
