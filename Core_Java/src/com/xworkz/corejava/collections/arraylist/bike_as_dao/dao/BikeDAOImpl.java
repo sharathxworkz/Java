@@ -10,15 +10,15 @@ public class BikeDAOImpl implements BikeDAO {
 
 	@Override
 	public void addBike(BikeDTO dto) {
+		
 		bikes.add(dto);
-		System.out.println("Added Bike is:" + dto);
+		System.out.println("Added Bikes is:" + dto);
 		
 	}
 	@Override
 	public BikeDTO getBike(String companyName) {
 		for(int i = 0; i<bikes.size();i++) {
 			if(bikes.get(i).getCompanyName() == companyName) {
-				System.out.println("The Bike Details are: " + bikes.get(i));
 				return bikes.get(i);
 			}
 		}
@@ -49,7 +49,6 @@ public class BikeDAOImpl implements BikeDAO {
 				bikes.remove(i);
 					count++;
 				}
-		
 			}	
 		if(count > 0) {
 			System.out.println("The Mentioned CompanyName and Model Number Bike is " +dto.getCompanyName() +" " + dto.getModelNo() + " being deleted from the ArrayList" );

@@ -52,24 +52,34 @@ public class ArrayListApplication {
 		gixxer.setPrice(169000.00);
 		gixxer.setTopSpeed(134);
 		
+		BikeDTO xpulse = new BikeDTO();
+		gixxer.setModelNo(0);
+		gixxer.setCompanyName("Hero");
+		gixxer.setCubicCapacity("200cc");
+		gixxer.setColor("White");
+		gixxer.setPrice(170000.00);
+		gixxer.setTopSpeed(145);
+		
 		BikeServices service = new BikeServicesImpl();
 		service.addBike(hornett);
 		service.addBike(apache);
 		service.addBike(extreme);
 		service.addBike(fZ);
 		service.addBike(gixxer);
-		
+//		service.addBike(xpulse);
+	
 		System.out.println("");
 		
-		service.getBike("Yamaha");
+//		BikeDTO getb = service.getBike("Yamaha");
+//		System.out.println("The Bike Details are: " + getb);
+//		
+//		System.out.println("");
+//		
+//		gixxer.setCompanyName("Suzuki-GixxerSF");
+//		service.updateBike(gixxer);
+//		
+//		System.out.println("");
 		
-		System.out.println("");
-		
-		gixxer.setCompanyName("Suzuki-GixxerSF");
-		service.updateBike(gixxer);
-		
-		System.out.println("");
-		
-		service.deleteBike(fZ);
+//		service.deleteBike(fZ);
 	}
 }
