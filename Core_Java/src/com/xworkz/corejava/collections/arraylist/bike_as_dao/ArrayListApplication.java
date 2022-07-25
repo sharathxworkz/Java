@@ -70,16 +70,15 @@ public class ArrayListApplication {
 	
 		System.out.println("");
 		
-//		BikeDTO getb = service.getBike("Yamaha");
-//		System.out.println("The Bike Details are: " + getb);
-//		
-//		System.out.println("");
-//		
-//		gixxer.setCompanyName("Suzuki-GixxerSF");
-//		service.updateBike(gixxer);
-//		
-//		System.out.println("");
+		BikeDTO getb = service.getBike("Yamaha");
+		System.out.println("The Bike Details are: " + getb);
+
+		System.out.println("");
 		
-//		service.deleteBike(fZ);
+		gixxer.setCompanyName("Suzuki-GixxerSF");
+		service.updateBike(gixxer);
+	
+		System.out.println("");
+		service.deleteBike(fZ);
 	}
 }
