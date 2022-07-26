@@ -9,7 +9,6 @@ public class TrainDAOImpl implements TrainDAO{
 	
 	HashSet<TrainDTO> hSet = new HashSet<TrainDTO>();
 	//converting hashset to arraylist.
-	TrainDTO[] trains = hSet.toArray(new TrainDTO[hSet.size()]);
 
 	@Override
 	public void addTrainDetails(TrainDTO traindto) {
@@ -20,15 +19,17 @@ public class TrainDAOImpl implements TrainDAO{
 
 	@Override
 	public TrainDTO getTrainDetails(Integer trainNumber) {
+		Object[] trains = hSet.toArray();
+
 		Integer count = 0;
-		int i;
-		for (i = 0; i < hSet.size(); i++) {
-			  if( trains[i].getTrainNumber() == trainNumber){
+		for (int i = 0; i < trains.length; i++) {
+		TrainDTO train	= (TrainDTO)trains[i];
+			  if(trains[i] != null &&  train.getTrainNumber().equals(trainNumber)){
 				  count++;
 			  }
 		   } 
-			  if(count > 1) {
-				  return trains[i];
+			  if(count != 0) {
+				  return (TrainDTO)trains[count];
 			  }
 		
 			  else {
@@ -39,13 +40,15 @@ public class TrainDAOImpl implements TrainDAO{
 
 	@Override
 	public void updateTrainDetails(TrainDTO traindto) {
-		int count=0;
-		for(int i = 0; i < hSet.size(); i++) {
-			if(trains[i] != null && trains[i].getTrainName() == traindto.getTrainName()) {
-				trains[i].setTrainName(traindto.getTrainName());
+		Object[] trains = hSet.toArray();
+		int count = 0;
+		for(int i = 0; i<trains.length;i++) {
+			TrainDTO train = (TrainDTO)trains[i];
+			if(trains[i] != null && train.getTrainName().equals(traindto.getTrainName())){
 				count++;
-				System.out.println("The Updated Train Details Are: " + trains[i]);
-			}			
+				train.setTrainName(traindto.getTrainName());
+				System.out.println(trains[i]);
+			}
 		}
 		if (count == 0) {
 			System.out.println("Unable To Update Train Details");

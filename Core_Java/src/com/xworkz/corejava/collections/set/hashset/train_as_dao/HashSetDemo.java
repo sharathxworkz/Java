@@ -38,7 +38,7 @@ public class HashSetDemo {
 	
 	TrainDTO chamundi = new TrainDTO();
 		
-		chamundi.setTrainNumber(15255);
+		chamundi.setTrainNumber(1525575);
 		chamundi.setTrainName("Chamundi Express");
 		chamundi.setNoOfVaggen(24);
 		chamundi.setSource("Mysore");
@@ -55,11 +55,12 @@ public class HashSetDemo {
 		rajdhani.setPrice(3500.00);
 	
 	TrainServices service = new TrainServicesImpl();
-//	service.addTrainDetails(shatabdi);
-//	service.addTrainDetails(rani);
-//	service.addTrainDetails(vande);
-//	service.addTrainDetails(chamundi);
-//	service.addTrainDetails(rajdhani);
+	
+	service.addTrainDetails(shatabdi);
+	service.addTrainDetails(rani);
+	service.addTrainDetails(vande);
+	service.addTrainDetails(chamundi);
+    service.addTrainDetails(rajdhani);
 	
 	System.out.println("");
 	
@@ -69,7 +70,7 @@ public class HashSetDemo {
 	System.out.println("");
 	
 	shatabdi.setTrainName("Shatabdi-Express");
-	service.updateTrainDetails(rajdhani);
+	service.updateTrainDetails(shatabdi);
 //	
 //	service.deleteTrainDetails(vande);
 
