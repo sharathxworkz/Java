@@ -10,6 +10,10 @@ public class RunnerBar {
 		Double avrCollectionPerDay = 27000.00;
 		Double avrCollectionPerMonth = avrCollectionPerDay*3;
 		
+		BarDTO dto6 = new BarDTO();
+		
+//		BarDTO dto6 = new BarDTO(5,"PumpHouse","Jp-Nagar","",avrCollectionPerDay,avrCollectionPerMonth);
+		
 		BarDTO dto = new BarDTO();
 		dto.setId(1);
 		dto.setBarName("Shilpa");
