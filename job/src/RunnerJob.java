@@ -12,7 +12,14 @@ public class RunnerJob {
 		JobDTO jobDTO = new JobDTO(1,Designation.SYSTEMENGINEER,300000.00D,Qualification.BE,57.65D,"NO");
 		JobDAO jobDAO = new JobDAOImpl();
 //		jobDAO.saveDetails(jobDTO);
-		jobDAO.findByID(2);
+//		JobDTO gon =jobDAO.findByID(2);
+//		System.out.println(gon);
+//	JobDTO details=jobDAO.findByIdAndDesignation(4, "NetworkEngineer");
+//	System.out.println(details);
+//		JobDTO de = jobDAO.findByIdAndDesignationAndQualification(6, "Developer", "BE");
+//		System.out.println(de);
+		jobDAO.getTotal();
+		
 	}
 
 }

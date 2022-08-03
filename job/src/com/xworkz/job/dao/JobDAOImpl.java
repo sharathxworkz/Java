@@ -9,6 +9,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import com.mysql.cj.protocol.Resultset;
 import com.xworkz.job.constant.Designation;
@@ -59,18 +60,20 @@ public class JobDAOImpl implements JobDAO {
 				int jid = resultSet.getInt(1);
 				String designation = resultSet.getString(2);
 				Double ctc = resultSet.getDouble(3);
-				String edu = resultSet.getNString(4);
+				String edu = resultSet.getString(4);
 				Double perc = resultSet.getDouble(5);
-				String eLevel = resultSet.getNString(6);
-				System.out.println(jid+" "+designation+" "+ctc+" "+edu+" "+perc+" "+eLevel);
-//				JobDTO jobDTO = new JobDTO();
-//				jobDTO.setJid(jid);
-//				jobDTO.setDesignation(Designation.valueOf(designation));
-//				jobDTO.setAnnualPackage(ctc);
-//				jobDTO.setQualification(Qualification.valueOf(edu));
-//				jobDTO.setPercentage(perc);
-//				jobDTO.setFresher(eLevel);
-//				return jobDTO;	
+				String eLevel = resultSet.getString(6);
+
+				JobDTO jobDTO = new JobDTO();
+				
+				jobDTO.setJid(jid);
+				jobDTO.setDesignation(Designation.getByValue(designation));
+				jobDTO.setAnnualPackage(ctc);
+				jobDTO.setQualification(Qualification.getByValue(edu));
+				jobDTO.setPercentage(perc);
+				jobDTO.setFresher(eLevel);
+				return jobDTO;	
+				
 			}
 		} 
 		catch (SQLException e) {
@@ -81,25 +84,108 @@ public class JobDAOImpl implements JobDAO {
 
 	@Override
 	public JobDTO findByIdAndDesignation(Integer id, String designation) {
-		// TODO Auto-generated method stub
+		
+		try {
+			Connection connection = DriverManager.getConnection(URL.getValue(),USERNAME.getValue(),SECRET.getValue());
+			String search = "select * from job.jobapplicationdetails where jid = ? AND designation = ?";
+			PreparedStatement preStat = connection.prepareStatement(search);
+			preStat.setInt(1, id);
+			preStat.setString(2, designation);
+			ResultSet resultSet = preStat.executeQuery();
+			while(resultSet.next()) {
+				System.out.println("inside while");
+				int jid = resultSet.getInt(1);
+				String desg = resultSet.getString(2);
+				Double ctc = resultSet.getDouble(3);
+				String edu = resultSet.getString(4);
+				Double perc = resultSet.getDouble(5);
+				String eLevel = resultSet.getString(6);
+
+				JobDTO jobDTO = new JobDTO();
+				
+				jobDTO.setJid(jid);
+				jobDTO.setDesignation(Designation.getByValue(desg));
+				jobDTO.setAnnualPackage(ctc);
+				jobDTO.setQualification(Qualification.getByValue(edu));
+				jobDTO.setPercentage(perc);
+				jobDTO.setFresher(eLevel);
+				return jobDTO;		
+			}
+		} 
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return null;
+
+
 	}
 
 	@Override
 	public JobDTO findByIdAndDesignationAndQualification(Integer id, String designation, String qualification) {
-		// TODO Auto-generated method stub
+		Connection connection;
+		try {
+			connection = DriverManager.getConnection(URL.getValue(), USERNAME.getValue(), SECRET.getValue());
+			String search = "select * from job.jobapplicationdetails where jid = ? and designation = ? and qualification = ?";
+			PreparedStatement pStmt = connection.prepareStatement(search);
+			pStmt.setInt(1, id);
+			pStmt.setString(2, designation);
+			pStmt.setString(3,qualification);
+			ResultSet resultSet = pStmt.executeQuery();
+			while(resultSet.next()) {
+				Integer jid = resultSet.getInt(1);
+				String desg = resultSet.getString(2);
+				Double ctc = resultSet.getDouble(3);
+				String education = resultSet.getString(4);
+				Double percentage = resultSet.getDouble(5);
+				String level = resultSet.getString(6);
+				
+				JobDTO jobDTO = new JobDTO();
+				jobDTO.setJid(jid);
+				jobDTO.setDesignation(Designation.getByValue(desg));
+				jobDTO.setAnnualPackage(ctc);
+				jobDTO.setQualification(Qualification.getByValue(education));
+				jobDTO.setPercentage(percentage);
+				jobDTO.setFresher(level);
+				return jobDTO;
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		return null;
 	}
 
 	@Override
 	public Integer getTotal() {
-		// TODO Auto-generated method stub
+		AtomicInteger atomicInteger = new AtomicInteger(0);
+		try {
+			Connection connection = DriverManager.getConnection(URL.getValue(), USERNAME.getValue(), SECRET.getValue());
+			String query = "select * from job.jobapplicationdetails";
+			PreparedStatement pStmt = connection.prepareStatement(query);
+			ResultSet resultset = pStmt.executeQuery();
+			while(resultset.next()) {
+				atomicInteger.incrementAndGet();
+			}
+			System.out.println(atomicInteger);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
 
 	@Override
 	public Boolean isFesherById(Integer id) {
-		// TODO Auto-generated method stub
+		try {
+			Connection connection = DriverManager.getConnection(URL.getValue(), USERNAME.getValue(), SECRET.getValue());
+			String get = "select * from job.jobapplicationdetails where jid = ? and fresher";
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			
 		return null;
 	}
 

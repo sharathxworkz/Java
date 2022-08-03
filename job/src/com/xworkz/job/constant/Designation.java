@@ -14,5 +14,18 @@ public enum Designation {
 		return designation;
 		
 	}
+	
+	public static Designation getByValue(String value) {
+		Designation[] designation = Designation.values();
+		for (Designation designation2 : designation) {
+		System.out.println(designation2.designation + "Comparing");
+			if(designation2.designation.equals(value)) {
+				return designation2;
+			}
+		}
+		
+		return null;
+		
+	}
 }
 
