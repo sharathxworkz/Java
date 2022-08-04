@@ -180,19 +180,49 @@ public class JobDAOImpl implements JobDAO {
 	public Boolean isFesherById(Integer id) {
 		try {
 			Connection connection = DriverManager.getConnection(URL.getValue(), USERNAME.getValue(), SECRET.getValue());
-			String get = "select * from job.jobapplicationdetails where jid = ? and fresher";
+			String sql = "select * from job.jobapplicationdetails where jid = ?";
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			stmt.setInt(1, id);
+			ResultSet resultSet = stmt.executeQuery();
+			while(resultSet.next()) {
+				Integer jid = resultSet.getInt(1);
+				String level = resultSet.getString(6);
+				
+				JobDTO jobDTO = new JobDTO();
+				jobDTO.setJid(jid);
+				jobDTO.setFresher(level);
+				if(jobDTO.getFresher().equals("YES")) {
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-			
 		return null;
 	}
 
 	@Override
 	public Double getMaxPercentage() {
-		// TODO Auto-generated method stub
+		try {
+			Connection connection = DriverManager.getConnection(URL.getValue(), USERNAME.getValue(), SECRET.getValue());
+			String sql = "SELECT MAX(percentage) FROM job.jobapplicationdetails";
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			ResultSet resultSet = stmt.executeQuery();
+			System.out.println(resultSet);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	}
+
+	
+
+	
 
 }

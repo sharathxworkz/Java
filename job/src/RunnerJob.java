@@ -18,8 +18,11 @@ public class RunnerJob {
 //	System.out.println(details);
 //		JobDTO de = jobDAO.findByIdAndDesignationAndQualification(6, "Developer", "BE");
 //		System.out.println(de);
-		jobDAO.getTotal();
-		
+//		jobDAO.getTotal();
+		boolean f = jobDAO.isFesherById(3);
+		System.out.println(f);
+//		Double perc = jobDAO.getMaxPercentage();
+//		System.out.println(perc);
 	}
 
 }
