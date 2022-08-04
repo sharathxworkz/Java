@@ -9,6 +9,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import com.mysql.cj.protocol.Resultset;
@@ -211,16 +212,25 @@ public class JobDAOImpl implements JobDAO {
 		try {
 			Connection connection = DriverManager.getConnection(URL.getValue(), USERNAME.getValue(), SECRET.getValue());
 			String sql = "SELECT MAX(percentage) FROM job.jobapplicationdetails";
-			PreparedStatement stmt = connection.prepareStatement(sql);
-			ResultSet resultSet = stmt.executeQuery();
-			System.out.println(resultSet);
+			Statement statement = connection.createStatement();
+			ResultSet resultSet = statement.executeQuery(sql);
+			Double max = 0.00;
+			while(resultSet.next()) {
+				double percentage = resultSet.getDouble(1);
+				if(percentage>max) {
+					max=percentage;
+				}
+				return max;
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
 	}
-
+//	PreparedStatement stmt = connection.prepareStatement(sql);
+//	ResultSet resultSet = stmt.executeQuery();
+//	
 	
 
 	
