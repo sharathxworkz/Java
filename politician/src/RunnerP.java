@@ -1,3 +1,5 @@
+import java.util.List;
+
 import com.xworkx.politician.dto.PoliticianDTO;
 import com.xworkz.politician.constant.PartyName;
 import com.xworkz.politician.constant.PartySymbol;
@@ -21,7 +23,7 @@ public class RunnerP {
 		
 		PoliticianDAO politicianDAO = new PoliticianDAOImpl();
 //		politicianDAO.saveDetails(politicianDTO1);
-//		PoliticianDTO get= politicianDAO.finfById(3);
+//		PoliticianDTO get= politicianDAO.finfById(8);
 //		System.out.println(get);
 //		PoliticianDTO d = politicianDAO.findByIdAndPresident(4,"Yogi");
 //		System.out.println(d);
@@ -33,9 +35,21 @@ public class RunnerP {
 //		System.out.println(n);
 //		String p = politicianDAO.findPresidentByIdAndName(7,"Kalyan");
 //		System.out.println(p);
-		politicianDAO.getTotal();
-	
-
+//		politicianDAO.getTotal();
+//		String m = politicianDAO.findPartyByMaxMembers();
+//		System.out.println(m);
+		
+//	List<PoliticianDTO> list= politicianDAO.findAll();
+//	System.out.println(list);
+		
+//		List<String> str = politicianDAO.findAllPartyName();
+//		System.out.println(str);
+		
+//		List<Integer> id = politicianDAO.findAllIds();
+//		System.out.println(id);
+		
+		List<Object> all = politicianDAO.findAllNoOfMembersAndFundAndPartyName();
+		System.out.println(all);
 	}
 
 }
