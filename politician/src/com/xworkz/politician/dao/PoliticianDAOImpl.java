@@ -21,8 +21,7 @@ public class PoliticianDAOImpl implements PoliticianDAO {
 
 	@Override
 	public Boolean saveDetails(PoliticianDTO dto) {
-		try (Connection connection = DriverManager.getConnection(URL.getValue(), USERNAME.getValue(),
-				SECRET.getValue())) {
+		try (Connection connection = DriverManager.getConnection(URL.getValue(), USERNAME.getValue(),SECRET.getValue())) {
 			String insert = "insert into politicians.politicians_info values (?,?,?,?,?,?,?,?,?)";
 			PreparedStatement stmt = connection.prepareStatement(insert);
 			stmt.setInt(1, dto.getId());

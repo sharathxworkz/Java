@@ -16,6 +16,7 @@ public interface PoliticianDAO {
 	public String findPresidentByIdAndName(Integer id,String name);
 	public int getTotal();
 	public String findPartyByMaxMembers();
+	
 	default List<PoliticianDTO> findAll(){
 		return Collections.EMPTY_LIST;
 	}

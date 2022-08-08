@@ -23,30 +23,30 @@ public class RunnerP {
 		
 		PoliticianDAO politicianDAO = new PoliticianDAOImpl();
 //		politicianDAO.saveDetails(politicianDTO1);
-//		PoliticianDTO get= politicianDAO.finfById(8);
-//		System.out.println(get);
-//		PoliticianDTO d = politicianDAO.findByIdAndPresident(4,"Yogi");
-//		System.out.println(d);
-//		PoliticianDTO m = politicianDAO.findByIdAndPresidentAndName(10, "Kumar", "Manohar");
-//		System.out.println(m);
-//		PoliticianDTO d = politicianDAO.findByIdAndName(6, "Hanumanth");
-//		System.out.println(d);
-//		String n = politicianDAO.findNameById(7);
-//		System.out.println(n);
-//		String p = politicianDAO.findPresidentByIdAndName(7,"Kalyan");
-//		System.out.println(p);
-//		politicianDAO.getTotal();
-//		String m = politicianDAO.findPartyByMaxMembers();
-//		System.out.println(m);
+		PoliticianDTO get= politicianDAO.finfById(8);
+		System.out.println(get);
+		PoliticianDTO d = politicianDAO.findByIdAndPresident(4,"Yogi");
+		System.out.println(d);
+		PoliticianDTO m = politicianDAO.findByIdAndPresidentAndName(10, "Kumar", "Manohar");
+		System.out.println(m);
+		PoliticianDTO in = politicianDAO.findByIdAndName(6, "Hanumanth");
+		System.out.println(in);
+		String n = politicianDAO.findNameById(7);
+		System.out.println(n);
+		String p = politicianDAO.findPresidentByIdAndName(7,"Kalyan");
+		System.out.println(p);
+		politicianDAO.getTotal();
+		String mm = politicianDAO.findPartyByMaxMembers();
+		System.out.println(mm);
 		
-//	List<PoliticianDTO> list= politicianDAO.findAll();
-//	System.out.println(list);
+		List<PoliticianDTO> list= politicianDAO.findAll();
+		System.out.println(list);
 		
-//		List<String> str = politicianDAO.findAllPartyName();
-//		System.out.println(str);
+		List<String> str = politicianDAO.findAllPartyName();
+		System.out.println(str);
 		
-//		List<Integer> id = politicianDAO.findAllIds();
-//		System.out.println(id);
+		List<Integer> id = politicianDAO.findAllIds();
+		System.out.println(id);
 		
 		List<Object> all = politicianDAO.findAllNoOfMembersAndFundAndPartyName();
 		System.out.println(all);
