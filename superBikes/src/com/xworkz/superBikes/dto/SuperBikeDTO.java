@@ -1,5 +1,8 @@
 package com.xworkz.superBikes.dto;
 
+import com.xworkz.superBikes.constants.BikeCC;
+import com.xworkz.superBikes.constants.CompanyName;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,7 +20,7 @@ public class SuperBikeDTO {
 private Integer id;
 private CompanyName companyName;
 private String bikeType;
-private String cubicCapacity;
+private BikeCC cubicCapacity;
 private Integer noOfGears;
 private Integer torque;
 private Integer rpm;

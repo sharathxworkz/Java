@@ -11,8 +11,21 @@ public enum BikeCC {
 		this.capacity = capacity;
 	}
 
-	public String getCapacity(String capacity) {
+	public String getCapacity() {
 		return capacity;
 		
 	}
+	
+	public static BikeCC getByCapacity(String capacity) {
+		
+		BikeCC[] bike = BikeCC.values();
+		for (BikeCC bikeCC : bike) {
+			if(bikeCC.capacity.equals(capacity)) {
+				return bikeCC;
+			}
+		}
+		return null;
+		
+	}
+
 }
