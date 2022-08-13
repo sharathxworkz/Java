@@ -11,9 +11,10 @@ import com.xworkz.saloon.entity.SaloonEntity;
 public class SaloonDAOImpl implements SaloonDAO{
 	
 	EntityManagerFactory factory = Persistence.createEntityManagerFactory("com.xworkz");
-	EntityManager manager = null;
+	
 	@Override
 	public Boolean save(SaloonEntity entity) {
+		EntityManager manager = null;
 		try {
 		manager = factory.createEntityManager();
 		EntityTransaction tx = manager.getTransaction();
@@ -32,6 +33,7 @@ public class SaloonDAOImpl implements SaloonDAO{
 
 	@Override
 	public SaloonEntity finfById(Integer sid) {
+		EntityManager manager = null;
 	try {
 		manager = factory.createEntityManager();
 		SaloonEntity entity = manager.find(SaloonEntity.class, sid);
@@ -54,6 +56,7 @@ public class SaloonDAOImpl implements SaloonDAO{
 
 	@Override
 	public void updateNameAndLocationById(String name, String location, Integer sid) {
+		EntityManager manager = null;
 		try {
 			manager = factory.createEntityManager();
 			EntityTransaction tx = manager.getTransaction();
@@ -80,6 +83,7 @@ public class SaloonDAOImpl implements SaloonDAO{
 
 	@Override
 	public void deleteById(Integer sid) {
+		EntityManager manager = null;
 		try {
 			manager = factory.createEntityManager();
 			EntityTransaction tx = manager.getTransaction();

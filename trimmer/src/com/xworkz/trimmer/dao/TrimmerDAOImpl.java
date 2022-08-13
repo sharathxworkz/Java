@@ -11,9 +11,10 @@ import com.xworkz.trimmer.entity.TrimmerEntity;
 public class TrimmerDAOImpl implements TrimmerDAO {
 
 	EntityManagerFactory factory = Persistence.createEntityManagerFactory("com.xworkz");
-	EntityManager manager = null;
+	
 	@Override
 	public Boolean save(TrimmerEntity entity) {
+		EntityManager manager = null;
 		try {
 			manager = factory.createEntityManager();
 			EntityTransaction tx = manager.getTransaction();
@@ -33,6 +34,7 @@ public class TrimmerDAOImpl implements TrimmerDAO {
 
 	@Override
 	public TrimmerEntity finfById(Integer tid) {
+		EntityManager manager = null;
 		try {
 			manager = factory.createEntityManager();
 			TrimmerEntity entity = manager.find(TrimmerEntity.class, tid);
@@ -55,6 +57,7 @@ public class TrimmerDAOImpl implements TrimmerDAO {
 
 	@Override
 	public void updateNameAndLocationById(String name, String color, Integer tid) {
+		EntityManager manager = null;
 		try {
 			manager = factory.createEntityManager();
 			EntityTransaction tx = manager.getTransaction();
@@ -84,6 +87,7 @@ public class TrimmerDAOImpl implements TrimmerDAO {
 
 	@Override
 	public void deleteById(Integer tid) {
+		EntityManager manager = null;
 		try {
 			manager = factory.createEntityManager();
 			EntityTransaction tx = manager.getTransaction();

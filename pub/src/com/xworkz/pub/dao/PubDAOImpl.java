@@ -11,11 +11,12 @@ import com.xworkz.pub.entity.PubEntity;
 public class PubDAOImpl implements PubDAO {
 
 	EntityManagerFactory factory = Persistence.createEntityManagerFactory("com.xworkz");
-	EntityManager manager = null;
+//	EntityManager manager = null;//manager should be always inside the method but before try block
 	@Override
 	public Boolean save(PubEntity entity) {
+		EntityManager manager = null;
 		try {
-		manager = factory.createEntityManager();
+			manager = factory.createEntityManager();
 		EntityTransaction tx = manager.getTransaction();
 		tx.begin();
 		manager.persist(entity);
@@ -33,6 +34,7 @@ public class PubDAOImpl implements PubDAO {
 
 	@Override
 	public PubEntity finfById(Integer pid) {
+		EntityManager manager = null;
 		try {
 			manager = factory.createEntityManager();
 			PubEntity entity = manager.find(PubEntity.class, pid);
@@ -58,6 +60,7 @@ public class PubDAOImpl implements PubDAO {
 
 	@Override
 	public void updateNameAndLocationById(String name, String location, Integer pid) {
+		EntityManager manager = null;
 		try {
 			manager = factory.createEntityManager();
 			EntityTransaction tx = manager.getTransaction();
@@ -86,6 +89,7 @@ public class PubDAOImpl implements PubDAO {
 
 	@Override
 	public void deleteById(Integer pid) {
+		EntityManager manager = null;
 		try {
 			manager  = factory.createEntityManager();
 			EntityTransaction tx = manager.getTransaction();

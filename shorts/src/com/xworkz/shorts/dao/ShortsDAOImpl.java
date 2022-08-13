@@ -10,10 +10,10 @@ import com.xworkz.shorts.entity.ShortsEntity;
 
 public class ShortsDAOImpl implements ShortsDAO{
 	EntityManagerFactory factory = Persistence.createEntityManagerFactory("com.xworkz");
-	EntityManager manager = null;
 
 	@Override
 	public Boolean save(ShortsEntity entity) {
+		EntityManager manager = null;
 		try {
 			manager = factory.createEntityManager();
 			EntityTransaction tx = manager.getTransaction();
@@ -32,6 +32,7 @@ public class ShortsDAOImpl implements ShortsDAO{
 
 	@Override
 	public ShortsEntity finfById(Integer sid) {
+		EntityManager manager = null;
 		try {
 			manager = factory.createEntityManager();
 			ShortsEntity entity = manager.find(ShortsEntity.class, sid);
@@ -55,6 +56,7 @@ public class ShortsDAOImpl implements ShortsDAO{
 
 	@Override
 	public void updateNameAndLocationById(String name, String location, Integer sid) {
+		EntityManager manager = null;
 		try {
 			manager = factory.createEntityManager();
 			EntityTransaction tx = manager.getTransaction();
@@ -84,6 +86,7 @@ public class ShortsDAOImpl implements ShortsDAO{
 
 	@Override
 	public void deleteById(Integer sid) {
+		EntityManager manager = null;
 		try {
 			manager = factory.createEntityManager();
 			EntityTransaction tx = manager.getTransaction();

@@ -10,11 +10,11 @@ import com.xworkz.club.entity.ClubEntity;
 
 public class ClubDAOImpl implements ClubDAO{
 EntityManagerFactory factory = Persistence.createEntityManagerFactory("com.xworkz");
-EntityManager manager = null;
 	@Override
 	public Boolean save(ClubEntity entity) {
+		EntityManager manager = null;
 		try {
-		manager = factory.createEntityManager();
+			manager = factory.createEntityManager();
 		EntityTransaction tx = manager.getTransaction();
 		tx.begin();
 		manager.persist(entity);
@@ -31,6 +31,7 @@ EntityManager manager = null;
 
 	@Override
 	public ClubEntity finfById(Integer cid) {
+		EntityManager manager = null;
 		try {
 			manager = factory.createEntityManager();
 			ClubEntity entity = manager.find(ClubEntity.class, cid);
@@ -55,6 +56,7 @@ EntityManager manager = null;
 
 	@Override
 	public void updateNameAndhappyHoursById(String name, String happy, Integer cid) {
+		EntityManager manager = null;
 		try {
 			manager = factory.createEntityManager();
 			EntityTransaction tx = manager.getTransaction();
@@ -82,6 +84,7 @@ EntityManager manager = null;
 
 	@Override
 	public void deleteById(Integer cid) {
+		EntityManager manager = null;
 		try {
 			manager = factory.createEntityManager();
 			EntityTransaction tx = manager.getTransaction();

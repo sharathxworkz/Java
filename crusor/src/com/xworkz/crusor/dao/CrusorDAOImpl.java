@@ -11,10 +11,11 @@ import com.xworkz.crusor.entity.CrusorEntity;
 public class CrusorDAOImpl implements CrusorDAO{
 
 	EntityManagerFactory factory = Persistence.createEntityManagerFactory("com.xworkz");
-	EntityManager manager = null;
+	
 	
 	@Override
 	public Boolean save(CrusorEntity entity) {
+		EntityManager manager = null;
 		try {
 			manager = factory.createEntityManager();
 			EntityTransaction tx = manager.getTransaction();
@@ -33,6 +34,7 @@ public class CrusorDAOImpl implements CrusorDAO{
 
 	@Override
 	public CrusorEntity finfById(Integer cid) {
+		EntityManager manager = null;
 		try {
 			manager = factory.createEntityManager();
 			CrusorEntity entity = manager.find(CrusorEntity.class, cid);
@@ -55,6 +57,7 @@ public class CrusorDAOImpl implements CrusorDAO{
 
 	@Override
 	public void updateNameAndLocationById(String name, String location, Integer cid) {
+		EntityManager manager = null;
 			try {
 				manager = factory.createEntityManager();
 				EntityTransaction tx = manager.getTransaction();
@@ -80,6 +83,8 @@ public class CrusorDAOImpl implements CrusorDAO{
 
 	@Override
 	public void deleteById(Integer cid) {
+		EntityManager manager = null;
+		try {
 		manager = factory.createEntityManager();
 		EntityTransaction tx = manager.getTransaction();
 		tx.begin();
@@ -93,6 +98,13 @@ public class CrusorDAOImpl implements CrusorDAO{
 			System.out.println("Unable To Update");
 		}
 		tx.commit();
+		}
+		catch(PersistenceException p ) {
+			p.printStackTrace();
+		}
+		finally {
+			manager.close();
+		}
 		
 	}
 

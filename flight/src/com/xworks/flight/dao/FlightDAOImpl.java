@@ -12,10 +12,10 @@ import com.xworkz.flight.entity.FlightEntity;
 
 public class FlightDAOImpl implements FlightDAO {
 	EntityManagerFactory factory = Persistence.createEntityManagerFactory("com.xworkz");
-	EntityManager manager = null;
 
 	@Override
 	public Boolean save(FlightEntity entity) {
+		EntityManager manager = null;
 		try {
 			manager = factory.createEntityManager();
 			EntityTransaction tx = manager.getTransaction();
@@ -34,6 +34,7 @@ public class FlightDAOImpl implements FlightDAO {
 
 	@Override
 	public FlightEntity finfById(Integer fid) {
+		EntityManager manager = null;
 		try {
 			manager = factory.createEntityManager();
 			FlightEntity entity = manager.find(FlightEntity.class, fid);
@@ -58,6 +59,7 @@ public class FlightDAOImpl implements FlightDAO {
 
 	@Override
 	public void updateNameAndLocationById(String name, String location, Integer fid) {
+		EntityManager manager = null;
 		try {
 			manager = factory.createEntityManager();
 			EntityTransaction tx = manager.getTransaction();
@@ -87,6 +89,7 @@ public class FlightDAOImpl implements FlightDAO {
 
 	@Override
 	public void deleteById(Integer pid) {
+		EntityManager manager = null;
 		try {
 			manager  = factory.createEntityManager();
 			EntityTransaction tx = manager.getTransaction();
