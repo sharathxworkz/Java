@@ -10,7 +10,7 @@ public class ClubRunner {
 	public static void main(String[] args) {
 		
 		ClubEntity entity = new ClubEntity();
-		entity.setCid(1);
+//		entity.setCid(1);
 		entity.setName("Indigo");
 		entity.setLocation("Indiranagar");
 		entity.setCheckInTime(LocalTime.of(5, 0));

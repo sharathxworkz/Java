@@ -7,11 +7,12 @@ import javax.persistence.Persistence;
 import javax.persistence.PersistenceException;
 
 import com.xworkz.flight.entity.FlightEntity;
+import static com.xworkz.flight.util.EMFUtil.*;
 
 
 
 public class FlightDAOImpl implements FlightDAO {
-	EntityManagerFactory factory = Persistence.createEntityManagerFactory("com.xworkz");
+	EntityManagerFactory factory = getFactory();
 
 	@Override
 	public Boolean save(FlightEntity entity) {

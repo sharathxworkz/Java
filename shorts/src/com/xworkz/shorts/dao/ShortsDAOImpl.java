@@ -7,9 +7,10 @@ import javax.persistence.Persistence;
 import javax.persistence.PersistenceException;
 
 import com.xworkz.shorts.entity.ShortsEntity;
+import static com.xworkz.shorts.util.EMFUtil.*;
 
 public class ShortsDAOImpl implements ShortsDAO{
-	EntityManagerFactory factory = Persistence.createEntityManagerFactory("com.xworkz");
+	EntityManagerFactory factory = getFactory();
 
 	@Override
 	public Boolean save(ShortsEntity entity) {

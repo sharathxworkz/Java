@@ -1,15 +1,17 @@
 package com.xworkz.club.dao;
 
+
+import static com.xworkz.util.EMFUtil.*;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
 import javax.persistence.PersistenceException;
 
 import com.xworkz.club.entity.ClubEntity;
 
 public class ClubDAOImpl implements ClubDAO{
-EntityManagerFactory factory = Persistence.createEntityManagerFactory("com.xworkz");
+	EntityManagerFactory factory  = getFactory();
 	@Override
 	public Boolean save(ClubEntity entity) {
 		EntityManager manager = null;

@@ -7,10 +7,11 @@ import javax.persistence.Persistence;
 import javax.persistence.PersistenceException;
 
 import com.xworkz.trimmer.entity.TrimmerEntity;
+import static com.xworkz.trimmer.util.EMFUtil.*;
 
 public class TrimmerDAOImpl implements TrimmerDAO {
 
-	EntityManagerFactory factory = Persistence.createEntityManagerFactory("com.xworkz");
+	EntityManagerFactory factory = getFactory();
 	
 	@Override
 	public Boolean save(TrimmerEntity entity) {

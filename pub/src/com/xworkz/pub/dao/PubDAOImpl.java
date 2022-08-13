@@ -7,10 +7,11 @@ import javax.persistence.Persistence;
 import javax.persistence.PersistenceException;
 
 import com.xworkz.pub.entity.PubEntity;
+import static com.xworkz.pub.util.EMFUtil.*;
 
 public class PubDAOImpl implements PubDAO {
 
-	EntityManagerFactory factory = Persistence.createEntityManagerFactory("com.xworkz");
+	EntityManagerFactory factory = getFactory();
 //	EntityManager manager = null;//manager should be always inside the method but before try block
 	@Override
 	public Boolean save(PubEntity entity) {

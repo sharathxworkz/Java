@@ -7,10 +7,11 @@ import javax.persistence.Persistence;
 import javax.persistence.PersistenceException;
 
 import com.xworkz.saloon.entity.SaloonEntity;
+import static com.xworkz.saloon.util.EMFUtil.*;
 
 public class SaloonDAOImpl implements SaloonDAO{
 	
-	EntityManagerFactory factory = Persistence.createEntityManagerFactory("com.xworkz");
+	EntityManagerFactory factory = getFactory();
 	
 	@Override
 	public Boolean save(SaloonEntity entity) {

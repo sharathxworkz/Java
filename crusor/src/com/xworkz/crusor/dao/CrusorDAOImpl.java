@@ -1,20 +1,20 @@
 package com.xworkz.crusor.dao;
 
+
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
 import javax.persistence.PersistenceException;
 
 import com.xworkz.crusor.entity.CrusorEntity;
+import static com.xworkz.crusor.util.EMFUtil.*;
 
 public class CrusorDAOImpl implements CrusorDAO{
-
-	EntityManagerFactory factory = Persistence.createEntityManagerFactory("com.xworkz");
-	
-	
+	EntityManagerFactory factory  = getFactory();
 	@Override
 	public Boolean save(CrusorEntity entity) {
+		
 		EntityManager manager = null;
 		try {
 			manager = factory.createEntityManager();
