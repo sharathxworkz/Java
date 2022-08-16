@@ -4,8 +4,8 @@
 	<artifactId>freedomfighters</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<properties>
-	<mysql.version>>8.0.30</mysql.version>
-	<lambok.version>>1.18.24</lambok.version>
+	<mysql.version>8.0.30</mysql.version>
+	<lambok.version>1.18.24</lambok.version>
 	<hibernate.version>5.6.10.Final</hibernate.version>
 	</properties>
 	<dependencies>
@@ -13,20 +13,20 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.30</version>
+			<version>${mysql.version}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.18.24</version>
+			<version>${lambok.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>5.6.10.Final</version>
+			<version>${hibernate.version}</version>
 		</dependency>
 	</dependencies>
 	<build>

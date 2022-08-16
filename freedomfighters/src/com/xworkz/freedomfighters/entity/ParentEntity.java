@@ -5,12 +5,11 @@ import java.time.LocalDateTime;
 import javax.persistence.MappedSuperclass;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
+@AllArgsConstructor
 @Getter
 @Setter
 @NoArgsConstructor
@@ -23,10 +22,5 @@ public class ParentEntity {
 	private String updatedBy;
 	private LocalDateTime updatedDate;
 	
-	ParentEntity(String CreatedBY,LocalDateTime createdDate, String updatedBy, LocalDateTime updatedDate ){
-		this.CreatedBY = CreatedBY;
-		this.createdDate = createdDate;
-		this.updatedBy = updatedBy;
-		this.updatedDate = updatedDate;
-	}
+
 }

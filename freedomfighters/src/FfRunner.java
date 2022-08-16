@@ -14,14 +14,15 @@ public class FfRunner {
 		FreedomFightersEntity entity1 = new FreedomFightersEntity(2,"Lal Bhadhur Shastri",LocalDateTime.now(),"Bihar","Attal Ji",LocalDateTime.now(),"Modi Ji",LocalDateTime.now());
 		FreedomFightersEntity entity2 = new FreedomFightersEntity(3,"Rani-Chanamma",LocalDateTime.now(),"Kittur","Attal Ji",LocalDateTime.now(),"Modi Ji",LocalDateTime.now());
 		
-		List<FreedomFightersEntity> list = new ArrayList<FreedomFightersEntity>();
-		
 		FreedomFightersDAO dao = new FreedomFightersDAOImpl();
 		
-		List lists = dao.insert(entity);
+		List<FreedomFightersEntity> list = new ArrayList<FreedomFightersEntity>();
+		list.add(entity);
+		list.add(entity1);
+		list.add(entity2);
 		
-		
-
+		Boolean save = dao.insert(list);
+		System.out.println(save);
 
 	}
 

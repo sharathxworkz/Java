@@ -13,17 +13,16 @@ import com.xworkz.freedomfighters.util.FactoryDetails;
 public class FreedomFightersDAOImpl implements FreedomFightersDAO{
 
 	EntityManagerFactory factory = FactoryDetails.getDetails();
-
+	
 	@Override
-	public Boolean insert(List<FreedomFightersEntity> entity) {
+	public boolean save(FreedomFightersEntity entity) {
 		EntityManager  manager = null;
 		try {
 			 manager = factory.createEntityManager();
 			 EntityTransaction tx = manager.getTransaction();
 			 tx.begin();
-			 for (FreedomFightersEntity freedomFightersEntity : entity) {
-				manager.persist(freedomFightersEntity);
-			}
+				manager.persist(entity);
+		
 				tx.commit();
 			}
 			catch (PersistenceException p) {
@@ -32,9 +31,28 @@ public class FreedomFightersDAOImpl implements FreedomFightersDAO{
 			finally {
 				manager.close();
 			}
-		return null;
+		return false;
 	}
-	
-	
+
+@Override
+public Boolean insert(List<FreedomFightersEntity> entities) {
+	EntityManager  manager = null;
+	try {
+		 manager = factory.createEntityManager();
+		 EntityTransaction tx = manager.getTransaction();
+		 tx.begin();
+		 for (FreedomFightersEntity freedomFightersEntity : entities) {
+			manager.persist(freedomFightersEntity);
+		}
+			tx.commit();
+		}
+		catch (PersistenceException p) {
+			p.printStackTrace();
+		}
+		finally {
+			manager.close();
+		}
+	return FreedomFightersDAO.super.insert(entities);
+}	
 
 }
