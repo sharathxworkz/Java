@@ -5,6 +5,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceException;
+import javax.persistence.Query;
 
 import com.xworkz.trimmer.entity.TrimmerEntity;
 import static com.xworkz.trimmer.util.EMFUtil.*;
@@ -20,6 +21,7 @@ public class TrimmerDAOImpl implements TrimmerDAO {
 			manager = factory.createEntityManager();
 			EntityTransaction tx = manager.getTransaction();
 			tx.begin();
+//			foreach loop
 			manager.persist(entity);
 			tx.commit();
 			
@@ -111,6 +113,31 @@ public class TrimmerDAOImpl implements TrimmerDAO {
 			manager.close();
 		}
 		
+	}
+	@Override
+	public TrimmerEntity findByName(String name) {
+		EntityManager manager = null;
+		try {
+			manager = factory.createEntityManager();
+			Query query = manager.createNamedQuery("findByName");
+			query.setParameter("nm", name);
+			Object obj = query.getSingleResult();
+			if(obj != null) {
+				System.out.println("Name Found Is");
+				TrimmerEntity entity = (TrimmerEntity)obj;
+				return entity;
+			}
+			else {
+				System.out.println("unable to find");
+			}
+			}
+			catch (PersistenceException p) {
+				p.printStackTrace();
+			}
+			finally {
+				manager.close();
+			}
+		return TrimmerDAO.super.findByName(name);
 	}
 
 }

@@ -8,5 +8,9 @@ public interface TrimmerDAO {
 	TrimmerEntity finfById(Integer tid);
 	void updateNameAndLocationById(String name, String color,Integer tid);
 	void deleteById(Integer tid);
+	default TrimmerEntity findByName(String name) {
+		return null;
+		
+	}
 
 }

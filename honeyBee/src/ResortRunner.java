@@ -23,8 +23,11 @@ public class ResortRunner {
 		resort.setPricePerDay(3000D);
 		
 		ResortDAO dao = new ResortDAOImpl();
-		Boolean save = dao.saveDetails(resort);
-		System.out.println("Saved Details are: " + save);
+//		Boolean save = dao.saveDetails(resort);
+//		System.out.println("Saved Details are: " + save);
+		
+		ResortEntity entity = dao.findByName("Mango Mist");
+		System.out.println(entity);
 	}
 
 }

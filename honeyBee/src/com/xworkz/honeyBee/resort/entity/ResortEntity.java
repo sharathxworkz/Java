@@ -1,12 +1,17 @@
 package com.xworkz.honeyBee.resort.entity;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.NamedNativeQueries;
 
 import lombok.Data;
 
@@ -14,7 +19,8 @@ import lombok.Data;
 @Table (name = "resort_info")
 @Data
 
-public class ResortEntity {
+@NamedQueries({@NamedQuery(name = "findByName", query = "select resortName from resort_info where resortName = :nm")})
+public class ResortEntity implements Serializable{
 
 @Id	
 @Column (name =" rId")

@@ -1,17 +1,20 @@
-package com.xworkz.trimmer.util;
+package com.xworkz.freedomfighters.util;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class EMFUtil {
-
-private static EntityManagerFactory factory; 
+public class FactoryDetails {
 	
-	public static EntityManagerFactory getFactory() {
+	private static EntityManagerFactory factory;
+	
+	
+	public static EntityManagerFactory getDetails() {
 		return factory;
-		
 	}
+	
 	static {
 		factory = Persistence.createEntityManagerFactory("com.xworkz");
 	}
+
 }
+

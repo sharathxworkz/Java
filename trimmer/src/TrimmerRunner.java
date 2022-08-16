@@ -25,6 +25,9 @@ public class TrimmerRunner {
 		dao.updateNameAndLocationById("LG", "MattBlue", 1);
 		
 		dao.deleteById(3);
+		
+		TrimmerEntity trimmer = dao.findByName("LG");
+		System.out.println(trimmer);
 	}
 
 }

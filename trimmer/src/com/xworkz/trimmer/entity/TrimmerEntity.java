@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -16,6 +18,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table (name = "trimmer_details")
+@NamedQueries({@NamedQuery(name = "findByName", query = "select trimmer from TrimmerEntity trimmer where trimmer.name = :nm")})
 
 public class TrimmerEntity {
 	
