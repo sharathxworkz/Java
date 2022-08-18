@@ -213,20 +213,70 @@ public class CartoonDAOImpl implements CartoonDAO{
 	}
 
 	@Override
-	public void updateAuthorByName(String name, String Author) {
-		// TODO Auto-generated method stub
+	public void updateAuthorByName(String author, String name) {
+		
+		EntityManager manager = null;
+		try{
+			manager = factory.createEntityManager();
+			EntityTransaction tx = manager.getTransaction();
+			tx.begin();
+			Query query = manager.createNamedQuery("updateAuthor");
+			query.setParameter("cname", author);
+			query.setParameter("nm", name);
+			System.out.println("The Updated Values of Author are:" + author );
+			tx.commit();
+		}
+		catch (PersistenceException p) {
+			p.printStackTrace();
+		}
+		finally {
+			manager.close();
+		}
 		
 	}
 
 	@Override
-	public void updateTypeByName(String name, String type) {
-		// TODO Auto-generated method stub
+	public void updateTypeByName(String type, String name) {
+
+		EntityManager manager = null;
+		try{
+			manager = factory.createEntityManager();
+			EntityTransaction tx = manager.getTransaction();
+			tx.begin();
+			Query query = manager.createNamedQuery("updateType");
+			query.setParameter("type", type);
+			query.setParameter("name", name);
+			System.out.println("The Updated Values of type is:" + type );
+			tx.commit();
+		}
+		catch (PersistenceException p) {
+			p.printStackTrace();
+		}
+		finally {
+			manager.close();
+		}	
 		
 	}
 
 	@Override
-	public void deleteByName() {
-		// TODO Auto-generated method stub
+	public void deleteByName(String name) {
+		EntityManager manager = null;
+		try{
+			manager = factory.createEntityManager();
+			EntityTransaction tx = manager.getTransaction();
+			tx.begin();
+			Query query = manager.createNamedQuery("deleteByName");
+			query.setParameter("nm", name);
+			System.out.println("The Deleted Name Of Row of Table is :" + name );
+			tx.commit();
+		}
+		catch (PersistenceException p) {
+			p.printStackTrace();
+		}
+		finally {
+			manager.close();
+		}	
+		
 		
 	}
 

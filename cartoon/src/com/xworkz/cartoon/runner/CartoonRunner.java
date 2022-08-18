@@ -20,7 +20,7 @@ public class CartoonRunner {
 		CartoonEntity vegeta = new CartoonEntity("Vegeta","Japan","Male","Akira Toriyama","ForKinds","Akira",LocalDateTime.of(2008, 7, 11, 2, 30),"Nandish",LocalDateTime.now());
 		CartoonEntity gohan = new CartoonEntity("Gohan","Japan","Male","Akira Toriyama","Action","Akira",LocalDateTime.of(2008, 7, 11, 2, 30),"Sharath",LocalDateTime.now());
 		CartoonEntity sataman = new CartoonEntity("Sataman","Japan","Male","Akir Toriyama","ForKinds","Toriyama",LocalDateTime.of(2008, 7, 11, 2, 30),"Hanumanth",LocalDateTime.now());
-		CartoonEntity popoye = new CartoonEntity("PopeyeSailor-","German","Male","Akir Toriyama","ForKinds","Akir",LocalDateTime.of(2005, 7, 11, 2, 30),"Shadow",LocalDateTime.now());
+		CartoonEntity popoye = new CartoonEntity("PopeyeSailor","German","Male","Akir Toriyama","ForKinds","Akir",LocalDateTime.of(2005, 7, 11, 2, 30),"Shadow",LocalDateTime.now());
 		CartoonEntity heidi = new CartoonEntity("Heldi","india","Female","Tomayo","Stories","Tory",LocalDateTime.of(2002, 7, 11, 2, 30),"Boss",LocalDateTime.now());
 		
 		List<CartoonEntity> list = new ArrayList<CartoonEntity>();
@@ -56,9 +56,15 @@ public class CartoonRunner {
 //		LocalDateTime history = dao.findCreadtedDateByAuthor("Hakshi Tanu");
 //		System.out.println(history);
 		
-		Object[] str = dao.findNameAndCountryByAuthor("Hakshi Tanu");
-		System.out.println(str[0]);
-		System.out.println(str[1]);
+//		Object[] str = dao.findNameAndCountryByAuthor("Hakshi Tanu");
+//		System.out.println(str[0]);
+//		System.out.println(str[1]);
+		
+//		dao.updateAuthorByName("AkiraZan", "PopeyeSailor-");
+		
+//		dao.updateTypeByName("Training","Sataman");
+		
+		dao.deleteByName("Heldi");
 	}
 
 }

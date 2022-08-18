@@ -33,7 +33,10 @@ import lombok.ToString;
 //	@NamedQuery(name = "findAll", query = "select cartoon from CartoonEntity cartoon where cartoonName = :nm and country = :cc and gender = :ge and author = :at"),
 //	@NamedQuery(name = "findAuthor",query = "select cartoon.author from CartoonEntity cartoon where cartoon.cartoonName = :nm"),
 //	@NamedQuery(name = "findCreatedDate",query = "select cartoon.createdDate from CartoonEntity cartoon where cartoon.author = :date"),
-	@NamedQuery(name = "findNameAndCountry",query = "select cartoon.cartoonName,cartoon.country from CartoonEntity cartoon where cartoon.author = :date")
+//	@NamedQuery(name = "findNameAndCountry",query = "select cartoon.cartoonName,cartoon.country from CartoonEntity cartoon where cartoon.author = :date"),
+//	@NamedQuery(name = "updateAuthor", query = "update CartoonEntity cartoon set cartoon.author = :cname where cartoon.cartoonName = :nm"),
+//	@NamedQuery(name = "updateType", query = "update CartoonEntity cartoon set cartoon.type =:type where cartoon.cartoonName = :name"),
+	@NamedQuery(name = "deleteByName", query = "delete from CartoonEntity where cartoonName = :nm")
 })
 public class CartoonEntity extends AnimatorEntity{
 

@@ -15,7 +15,7 @@ public interface CartoonDAO {
 	String findAuthorByName(String name);
 	Object[] findNameAndCountryByAuthor(String author);
 	LocalDateTime findCreadtedDateByAuthor(String author);
-	void updateAuthorByName(String name,String Author);
+	void updateAuthorByName(String name,String author);
 	void updateTypeByName(String name,String type);
-	void deleteByName();
+	void deleteByName(String name);
 }
