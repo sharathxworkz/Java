@@ -43,8 +43,8 @@ public class CartoonRunner {
 		
 //		System.out.println(dao.total());
 		
-//		CartoonEntity row = dao.findByMaxCreatedDate();
-//		System.out.println(row);
+		CartoonEntity row = dao.findByMaxCreatedDate();
+		System.out.println(row);
 
 		
 //		CartoonEntity cartoon = dao.findByNameAndCountryAndGenderAndAuthor("Goku", "Japan", "Male", "Akira Toriyama");
@@ -60,11 +60,11 @@ public class CartoonRunner {
 //		System.out.println(str[0]);
 //		System.out.println(str[1]);
 		
-//		dao.updateAuthorByName("AkiraZan", "PopeyeSailor-");
+//		dao.updateAuthorByName("Nandish", "Doremon");
 		
 //		dao.updateTypeByName("Training","Sataman");
 		
-		dao.deleteByName("Heldi");
+//		dao.deleteByName("Heldi");
 	}
 
 }

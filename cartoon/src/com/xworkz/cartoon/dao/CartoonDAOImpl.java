@@ -92,14 +92,7 @@ public class CartoonDAOImpl implements CartoonDAO{
 			manager = factory.createEntityManager();
 			Query query = manager.createNamedQuery("getAll");
 			Object obj = query.getSingleResult();
-			if(obj != null) {
-				CartoonEntity cartoon = (CartoonEntity)obj;
-				return cartoon;	
-			}
-			else {
-				System.out.println("Unable To Find");
-			}
-					
+			System.out.println("The Max Createddate is:" + obj);
 		}
 		catch (PersistenceException p) {
 			p.printStackTrace();
@@ -221,8 +214,9 @@ public class CartoonDAOImpl implements CartoonDAO{
 			EntityTransaction tx = manager.getTransaction();
 			tx.begin();
 			Query query = manager.createNamedQuery("updateAuthor");
-			query.setParameter("cname", author);
+			query.setParameter("at", author);
 			query.setParameter("nm", name);
+			query.executeUpdate();
 			System.out.println("The Updated Values of Author are:" + author );
 			tx.commit();
 		}
@@ -246,6 +240,7 @@ public class CartoonDAOImpl implements CartoonDAO{
 			Query query = manager.createNamedQuery("updateType");
 			query.setParameter("type", type);
 			query.setParameter("name", name);
+			query.executeUpdate();
 			System.out.println("The Updated Values of type is:" + type );
 			tx.commit();
 		}
@@ -266,7 +261,8 @@ public class CartoonDAOImpl implements CartoonDAO{
 			EntityTransaction tx = manager.getTransaction();
 			tx.begin();
 			Query query = manager.createNamedQuery("deleteByName");
-			query.setParameter("nm", name);
+			query.setParameter("dname", name);
+			query.executeUpdate();
 			System.out.println("The Deleted Name Of Row of Table is :" + name );
 			tx.commit();
 		}
