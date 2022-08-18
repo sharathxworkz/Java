@@ -17,16 +17,21 @@ public class FreedomFightersDAOImpl implements FreedomFightersDAO{
 	@Override
 	public boolean save(FreedomFightersEntity entity) {
 		EntityManager  manager = null;
+		Integer count = 0;
 		try {
 			 manager = factory.createEntityManager();
 			 EntityTransaction tx = manager.getTransaction();
 			 tx.begin();
 				manager.persist(entity);
-		
+				count++;
+				if(count > 20) {
+					manager.flush();
+				}
 				tx.commit();
 			}
 			catch (PersistenceException p) {
 				p.printStackTrace();
+				manager.getTransaction().rollback();
 			}
 			finally {
 				manager.close();

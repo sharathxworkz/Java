@@ -17,12 +17,14 @@ public class FfRunner {
 		FreedomFightersDAO dao = new FreedomFightersDAOImpl();
 		
 		List<FreedomFightersEntity> list = new ArrayList<FreedomFightersEntity>();
+		for(int i = 500; i>0; i--) {
 		list.add(entity);
 		list.add(entity1);
 		list.add(entity2);
-		
 		Boolean save = dao.insert(list);
 		System.out.println(save);
+		}
+		
 
 	}
 

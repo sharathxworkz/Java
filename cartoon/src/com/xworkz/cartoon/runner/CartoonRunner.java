@@ -23,18 +23,19 @@ public class CartoonRunner {
 		CartoonEntity popoye = new CartoonEntity("PopeyeSailor","German","Male","Akir Toriyama","ForKinds","Akir",LocalDateTime.of(2005, 7, 11, 2, 30),"Shadow",LocalDateTime.now());
 		CartoonEntity heidi = new CartoonEntity("Heldi","india","Female","Tomayo","Stories","Tory",LocalDateTime.of(2002, 7, 11, 2, 30),"Boss",LocalDateTime.now());
 		
-		List<CartoonEntity> list = new ArrayList<CartoonEntity>();
-		list.add(doremon);
-		list.add(goku);
-		list.add(motu);
-		list.add(patlu);
-		list.add(naruto);
-		list.add(vegeta);
-		list.add(gohan);
-		list.add(sataman);
-		list.add(popoye);
-		list.add(heidi);
 		CartoonDAO dao = new CartoonDAOImpl();
+		List<CartoonEntity> list = new ArrayList<CartoonEntity>();
+			list.add(doremon);
+			list.add(goku);
+			list.add(motu);
+			list.add(patlu);
+			list.add(naruto);
+			list.add(vegeta);
+			list.add(gohan);
+			list.add(sataman);
+			list.add(popoye);
+			list.add(heidi); 
+		
 //		Boolean save = dao.save(list);
 //		System.out.println(save);
 		
@@ -43,8 +44,8 @@ public class CartoonRunner {
 		
 //		System.out.println(dao.total());
 		
-		CartoonEntity row = dao.findByMaxCreatedDate();
-		System.out.println(row);
+//		CartoonEntity row = dao.findByMaxCreatedDate();
+//		System.out.println(row);
 
 		
 //		CartoonEntity cartoon = dao.findByNameAndCountryAndGenderAndAuthor("Goku", "Japan", "Male", "Akira Toriyama");
@@ -65,6 +66,33 @@ public class CartoonRunner {
 //		dao.updateTypeByName("Training","Sataman");
 		
 //		dao.deleteByName("Heldi");
+			
+		 
+//			dao.findAll().forEach(System.out::println);
+			
+			System.out.println("*********************************This Is the Second Method***********************************");
+//			
+//			dao.findAllByAuthor("Akira Toriyama").forEach(System.out::println);
+			
+			System.out.println("*********************************This Is the Third Method***********************************");
+			
+//			dao.findAllByAuthorAndGender("Akira Toriyama", "Male").forEach(System.out::println);
+			
+			System.out.println("*********************************This Is the Fourth Method***********************************");
+			
+//			dao.findAllName().forEach(System.out::println);
+			
+			System.out.println("*********************************This Is the Fifth Method***********************************");
+			
+//			dao.findAllCountry().forEach(System.out::println);
+			
+			System.out.println("*********************************This Is the Sixth Method***********************************");
+			
+//			dao.findAllNameAndCountry().forEach(obj->System.out.println(obj[0]+"::"+ obj[1]));
+			
+			System.out.println("*********************************This Is the Seventh Method***********************************");
+			
+			dao.findAllNameAndCountryAndAuthor().forEach(obj->System.out.println(obj[0]+"::"+ obj[1]+"::"+obj[2]));
 	}
 
 }
