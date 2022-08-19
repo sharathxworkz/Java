@@ -1,28 +1,26 @@
-package com.xworkz.freedomfighters.entity;
+package com.xworkz.supermarket.entity;
 
 import java.time.LocalDateTime;
 
-import javax.persistence.MappedSuperclass;
-
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@AllArgsConstructor
 @Getter
 @Setter
+@AllArgsConstructor
 @NoArgsConstructor
-@MappedSuperclass
 @ToString
+@Data
 
 public class ParentEntity {
 
-	private String CreatedBY;
 	private LocalDateTime createdDate;
-	private String updatedBy;
+	private String createdBy;
 	private LocalDateTime updatedDate;
+	private String updatedBy;
 	
-
 }

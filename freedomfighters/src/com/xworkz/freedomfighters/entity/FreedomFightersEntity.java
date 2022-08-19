@@ -17,7 +17,7 @@ import lombok.ToString;
 
 
 @NoArgsConstructor
-@ToString
+@ToString(callSuper = true)
 @Entity
 @Getter
 @Setter
@@ -26,18 +26,17 @@ import lombok.ToString;
 
 public class FreedomFightersEntity extends ParentEntity{
 	
-//	@GenericGenerator(name = "manga", strategy = "increment")
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GenericGenerator(name = "manga", strategy = "increment")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	private Integer fightersId;
 	private String fightersName;
 	private LocalDateTime fighterDOB;
 	private String FightersBornLocation;
 
-	public FreedomFightersEntity (Integer fightersId ,String fightersName,LocalDateTime fighterDOB, String FightersBornLocation,String createdBY,LocalDateTime createdDate,String updatedBy,LocalDateTime updatedDate ){
+	public FreedomFightersEntity (String fightersName,LocalDateTime fighterDOB, String FightersBornLocation,String createdBY,LocalDateTime createdDate,String updatedBy,LocalDateTime updatedDate ){
 		
 		super(createdBY,createdDate,updatedBy,updatedDate);
-		this.fightersId = fightersId;
 		this.fightersName = fightersName;
 		this.fighterDOB = fighterDOB;
 		this.FightersBornLocation = FightersBornLocation;

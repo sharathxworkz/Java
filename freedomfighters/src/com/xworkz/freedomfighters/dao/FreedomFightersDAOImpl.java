@@ -17,16 +17,11 @@ public class FreedomFightersDAOImpl implements FreedomFightersDAO{
 	@Override
 	public boolean save(FreedomFightersEntity entity) {
 		EntityManager  manager = null;
-		Integer count = 0;
 		try {
 			 manager = factory.createEntityManager();
 			 EntityTransaction tx = manager.getTransaction();
 			 tx.begin();
-				manager.persist(entity);
-				count++;
-				if(count > 20) {
-					manager.flush();
-				}
+			manager.persist(entity);
 				tx.commit();
 			}
 			catch (PersistenceException p) {
@@ -42,13 +37,21 @@ public class FreedomFightersDAOImpl implements FreedomFightersDAO{
 @Override
 public Boolean insert(List<FreedomFightersEntity> entities) {
 	EntityManager  manager = null;
+	Integer count = 0;
 	try {
 		 manager = factory.createEntityManager();
 		 EntityTransaction tx = manager.getTransaction();
 		 tx.begin();
 		 for (FreedomFightersEntity freedomFightersEntity : entities) {
-			manager.persist(freedomFightersEntity);
-		}
+			manager.merge(freedomFightersEntity);
+			count++;
+			if(count == 20) {
+				manager.flush();
+				System.out.println("******************************************* count = 20");
+				count = 0;
+			}
+			
+		 }
 			tx.commit();
 		}
 		catch (PersistenceException p) {
