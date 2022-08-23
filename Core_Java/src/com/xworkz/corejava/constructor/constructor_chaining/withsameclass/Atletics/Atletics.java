@@ -19,7 +19,7 @@ public class Atletics {
 	}
 
 	Atletics( String name,String type,int distance){
-
+	this("run","relay");
 	this.name = name;
 	this.type = type;
 	this.distance = distance;

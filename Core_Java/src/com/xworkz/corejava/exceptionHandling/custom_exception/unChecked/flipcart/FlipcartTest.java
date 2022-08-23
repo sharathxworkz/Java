@@ -20,7 +20,7 @@ public class FlipcartTest {
 		flipcart.addProduct(bicycle);
 		
 		try {
-            Product product=flipcart.getProduct(cycle);
+            Product product=flipcart.getProduct(bicycle);
 			System.out.println(product);
 			}
 		catch(ProductException e) {

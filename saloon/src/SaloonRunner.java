@@ -3,6 +3,11 @@ import java.time.LocalDate;
 import com.xworkz.saloon.dao.SaloonDAO;
 import com.xworkz.saloon.dao.SaloonDAOImpl;
 import com.xworkz.saloon.entity.SaloonEntity;
+import com.xworkz.supermarket.dao.SuperMarketDAO;
+import com.xworkz.supermarket.dao.SuperMarketDAOImpl;
+import com.xworkz.supermarket.entity.MarketEntity;
+import com.xworkz.supermarket.services.ServicesDAO;
+import com.xworkz.supermarket.services.ServicesDAOImpl;
 
 public class SaloonRunner {
 
@@ -25,6 +30,16 @@ public class SaloonRunner {
 //		dao.updateNameAndLocationById("Trends", "Srinagar", 2);
 		
 		dao.deleteById(2);
-	}
+	
+	
+	MarketEntity entit1 = new MarketEntity();
+	
+	SuperMarketDAO da = new SuperMarketDAOImpl(); 
+	
+		
+		ServicesDAO dao1 = new ServicesDAOImpl();
+		dao1.save(entit1);
 
 }
+
+	}
